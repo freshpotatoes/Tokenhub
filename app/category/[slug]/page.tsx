@@ -60,7 +60,7 @@ export function generateMetadata({
 
 // ===== 页面组件 =====
 
-export default function CategoryPage({
+export default async function CategoryPage({
   params,
 }: {
   params: { slug: string };
@@ -76,7 +76,7 @@ export default function CategoryPage({
   const label = CATEGORY_LABELS[category];
 
   // 从全量数据中筛选出包含该分类的中转站
-  const allProviders = getAllProviders();
+  const allProviders = await getAllProviders();
   const filtered = allProviders.filter(
     (p) => p.categories && p.categories.includes(category)
   );

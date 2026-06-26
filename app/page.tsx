@@ -18,8 +18,8 @@ interface HomePageProps {
   searchParams: Record<string, string | string[] | undefined>;
 }
 
-export default function HomePage({ searchParams }: HomePageProps) {
-  const allProviders = getAllProviders();
+export default async function HomePage({ searchParams }: HomePageProps) {
+  const allProviders = await getAllProviders();
   const filterParams = parseSearchParams(searchParams);
   const filteredProviders = filterProviders(allProviders, filterParams);
 

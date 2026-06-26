@@ -22,10 +22,10 @@ const ALL_CATEGORIES: CategoryType[] = [
   'image_understanding', 'audio_tts', 'audio_asr', 'embedding', 'rerank',
 ];
 
-export default function sitemap(): MetadataRoute.Sitemap {
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://tokenhub.example.com';
 
-  const providers = getAllProviders();
+  const providers = await getAllProviders();
 
   const providerPages: MetadataRoute.Sitemap = providers.map((p) => ({
     url: `${baseUrl}/providers/${p.slug}`,

@@ -1,305 +1,2157 @@
 [
   {
-    "id": "p001",
-    "name": "OpenRouter China",
-    "slug": "openrouter-china",
-    "website_url": "https://openrouter-china.example.com",
-    "logo_url": "/logos/openrouter-china.png",
-    "founded_at": "2023-06-01",
+    "id": "30000000-0000-0000-0000-000000000009",
+    "name": "DeepSeek官方API",
+    "slug": "deepseek-api",
+    "website_url": "https://platform.deepseek.com",
+    "logo_url": "",
+    "founded_at": "2023-11-01",
     "status": "online",
-    "supported_models": ["openai", "claude", "gemini", "deepseek", "mistral", "llama"],
-    "categories": ["chat", "coding", "embedding"],
+    "categories": [
+      "chat",
+      "coding"
+    ],
+    "supported_models": [
+      "deepseek"
+    ],
     "openai_compatible": true,
     "supports_streaming": true,
     "supports_function_call": true,
-    "price_multiplier": 1.05,
+    "price_multiplier": 0.3,
     "billing_type": "prepaid",
     "has_free_quota": true,
-    "rate_limit_note": "无公开限制,高并发可能限速",
+    "rate_limit_note": "官方API,极致低价;注册送500万Token",
     "concurrency_limit": null,
-    "payment_methods": ["alipay", "wechat", "usdt", "card"],
+    "payment_methods": [
+      "alipay",
+      "wechat"
+    ],
+    "signup_barrier": "low",
+    "reputation_score": 5,
+    "runaway_risk": "low",
+    "community_links": [
+      {
+        "url": "https://discord.gg/deepseek",
+        "type": "discord",
+        "label": "DeepSeek Discord"
+      }
+    ],
+    "description": "DeepSeek官方API平台,不是中转站但常被用作对比基准。DeepSeek-V3/R1系列推理能力极强,价格仅为GPT-4的1/10。OpenAI完全兼容,注册送500万Token。全球最快增长的AI API之一。",
+    "last_checked_at": null,
+    "created_at": "2026-06-26T07:26:34.1004+00:00",
+    "updated_at": "2026-06-26T07:26:34.1004+00:00"
+  },
+  {
+    "id": "30000000-0000-0000-0000-000000000010",
+    "name": "Replicate",
+    "slug": "replicate",
+    "website_url": "https://replicate.com",
+    "logo_url": "",
+    "founded_at": "2021-01-01",
+    "status": "online",
+    "categories": [
+      "image_gen",
+      "video_gen",
+      "image_understanding",
+      "audio_tts",
+      "audio_asr"
+    ],
+    "supported_models": [
+      "llama",
+      "mistral",
+      "other"
+    ],
+    "openai_compatible": false,
+    "supports_streaming": false,
+    "supports_function_call": false,
+    "price_multiplier": 1,
+    "billing_type": "prepaid",
+    "has_free_quota": false,
+    "rate_limit_note": "按模型按秒/按张计费;国内需代理访问",
+    "concurrency_limit": null,
+    "payment_methods": [
+      "card",
+      "paypal"
+    ],
     "signup_barrier": "low",
     "reputation_score": 4.5,
     "runaway_risk": "low",
     "community_links": [
-      { "type": "tg", "label": "官方公告频道", "url": "https://t.me/openrouter_china" },
-      { "type": "discord", "label": "用户社区", "url": "https://discord.gg/openrouter-china" }
+      {
+        "url": "https://discord.gg/replicate",
+        "type": "discord",
+        "label": "Discord社区"
+      }
     ],
-    "description": "老牌中转站,上线超过2年,支持模型最全。API 格式完全兼容 OpenAI,一行代码切换。适合对稳定性要求高的开发者。免费额度每日 50 次请求。",
-    "last_checked_at": "2026-06-26T08:00:00Z",
-    "created_at": "2024-01-15T00:00:00Z",
-    "updated_at": "2026-06-26T08:00:00Z"
+    "description": "全球最大的开源模型托管平台,数万个社区模型。专注图像生成(SD/FLUX/DALL-E等)/视频生成/图像理解/音频(TTS/ASR)/文本生成。按使用量计费(按秒/按张),冷启动有延迟但模型选择极广。国内需代理。",
+    "last_checked_at": null,
+    "created_at": "2026-06-26T07:26:34.218747+00:00",
+    "updated_at": "2026-06-26T07:26:34.218747+00:00"
   },
   {
-    "id": "p002",
-    "name": "APIHub 聚合站",
-    "slug": "apihub",
-    "website_url": "https://apihub.example.com",
-    "logo_url": "/logos/apihub.png",
-    "founded_at": "2024-01-15",
+    "id": "30000000-0000-0000-0000-000000000001",
+    "name": "阿里云百炼",
+    "slug": "bailian",
+    "website_url": "https://bailian.aliyun.com",
+    "logo_url": "",
+    "founded_at": "2023-10-01",
     "status": "online",
-    "supported_models": ["openai", "claude", "gemini", "qwen", "deepseek"],
-    "categories": ["chat", "coding", "image_gen", "audio_tts"],
+    "categories": [
+      "chat",
+      "coding",
+      "image_gen",
+      "video_gen",
+      "image_understanding",
+      "audio_tts",
+      "audio_asr",
+      "embedding",
+      "rerank"
+    ],
+    "supported_models": [
+      "qwen",
+      "deepseek",
+      "glm",
+      "moonshot",
+      "yi",
+      "llama"
+    ],
     "openai_compatible": true,
     "supports_streaming": true,
     "supports_function_call": true,
-    "price_multiplier": 0.78,
-    "billing_type": "prepaid",
+    "price_multiplier": 0.7,
+    "billing_type": "postpaid",
     "has_free_quota": true,
-    "rate_limit_note": "普通用户 30次/分钟, VIP 120次/分钟",
-    "concurrency_limit": 10,
-    "payment_methods": ["alipay", "wechat", "usdt"],
-    "signup_barrier": "low",
-    "reputation_score": 3.5,
-    "runaway_risk": "medium",
-    "community_links": [
-      { "type": "tg", "label": "官方群", "url": "https://t.me/apihub_group" }
+    "rate_limit_note": "新用户送百万Token体验;企业级QPS保障",
+    "concurrency_limit": null,
+    "payment_methods": [
+      "alipay",
+      "wechat",
+      "card"
     ],
-    "description": "价格有竞争力,国产模型覆盖面广。2024 年曾短暂宕机 3 天引发用户担忧,目前运营正常。注册即送 100 次免费调用。",
-    "last_checked_at": "2026-06-26T08:05:00Z",
-    "created_at": "2024-02-20T00:00:00Z",
-    "updated_at": "2026-06-26T08:05:00Z"
-  },
-  {
-    "id": "p003",
-    "name": "OneAPI Cloud",
-    "slug": "oneapi-cloud",
-    "website_url": "https://oneapi-cloud.example.com",
-    "logo_url": "/logos/oneapi-cloud.png",
-    "founded_at": "2024-03-01",
-    "status": "online",
-    "supported_models": ["openai", "claude", "gemini", "deepseek", "qwen", "glm", "moonshot"],
-    "categories": ["chat", "coding"],
-    "openai_compatible": true,
-    "supports_streaming": true,
-    "supports_function_call": false,
-    "price_multiplier": 0.65,
-    "billing_type": "prepaid",
-    "has_free_quota": false,
-    "rate_limit_note": "按套餐等级限制,基础版 20次/分钟",
-    "concurrency_limit": 5,
-    "payment_methods": ["alipay", "wechat"],
     "signup_barrier": "medium",
-    "reputation_score": 3.0,
-    "runaway_risk": "medium",
-    "community_links": [
-      { "type": "qq", "label": "QQ群", "url": "https://qm.qq.com/q/oneapi-cloud" }
-    ],
-    "description": "基于开源 OneAPI 项目搭建的商业托管版,主打低价。需要手机号注册。不支持 function call 是主要短板。适合对价格敏感的个人开发者。",
-    "last_checked_at": "2026-06-26T08:10:00Z",
-    "created_at": "2024-03-10T00:00:00Z",
-    "updated_at": "2026-06-26T08:10:00Z"
-  },
-  {
-    "id": "p004",
-    "name": "AIGateway Pro",
-    "slug": "aigateway-pro",
-    "website_url": "https://aigateway-pro.example.com",
-    "logo_url": "/logos/aigateway-pro.png",
-    "founded_at": "2023-09-15",
-    "status": "online",
-    "supported_models": ["openai", "claude", "gemini", "mistral"],
-    "categories": ["chat", "coding", "embedding", "rerank"],
-    "openai_compatible": true,
-    "supports_streaming": true,
-    "supports_function_call": true,
-    "price_multiplier": 1.20,
-    "billing_type": "subscription",
-    "has_free_quota": false,
-    "rate_limit_note": "企业版 300次/分钟,定制方案可更高",
-    "concurrency_limit": 50,
-    "payment_methods": ["card", "alipay", "wechat"],
-    "signup_barrier": "high",
-    "reputation_score": 4.0,
+    "reputation_score": 4.5,
     "runaway_risk": "low",
     "community_links": [
-      { "type": "tg", "label": "VIP客户群", "url": "https://t.me/aigateway_vip" }
+      {
+        "url": "https://help.aliyun.com/product/2719818.html",
+        "type": "other",
+        "label": "官方文档"
+      }
     ],
-    "description": "面向企业的中转服务,使用专线网络,延迟极低。需要实名认证和企业资质审核才能开通。提供 99.9% SLA 保障。价格较高但稳定性极好。",
-    "last_checked_at": "2026-06-26T08:15:00Z",
-    "created_at": "2024-01-05T00:00:00Z",
-    "updated_at": "2026-06-26T08:15:00Z"
+    "description": "阿里云官方AI大模型平台,通义千问全系列+第三方热门模型(DeepSeek/GLM/Kimi/Llama等)。覆盖文本/图像(Qwen-Image)/视频(Wan2.1)/语音(SenseVoice+CosyVoice)/Embedding/Rerank全模态。企业级SLA,后付费按量计费,新用户百万Token免费。",
+    "last_checked_at": null,
+    "created_at": "2026-06-26T07:26:32.890971+00:00",
+    "updated_at": "2026-06-26T07:26:32.890971+00:00"
   },
   {
-    "id": "p005",
-    "name": "TokenPool",
-    "slug": "tokenpool",
-    "website_url": "https://tokenpool.example.com",
-    "logo_url": "/logos/tokenpool.png",
+    "id": "20000000-0000-0000-0000-000000000004",
+    "name": "OpenRouter",
+    "slug": "openrouter",
+    "website_url": "https://openrouter.ai",
+    "logo_url": "",
+    "founded_at": "2023-01-01",
+    "status": "online",
+    "categories": [
+      "chat",
+      "coding",
+      "embedding",
+      "rerank",
+      "image_gen",
+      "image_understanding"
+    ],
+    "supported_models": [
+      "openai",
+      "claude",
+      "gemini",
+      "deepseek",
+      "mistral",
+      "llama",
+      "qwen"
+    ],
+    "openai_compatible": true,
+    "supports_streaming": true,
+    "supports_function_call": true,
+    "price_multiplier": 1,
+    "billing_type": "prepaid",
+    "has_free_quota": false,
+    "rate_limit_note": "免费模型27个;国内需代理访问",
+    "concurrency_limit": null,
+    "payment_methods": [
+      "card",
+      "crypto_other"
+    ],
+    "signup_barrier": "low",
+    "reputation_score": 4.5,
+    "runaway_risk": "low",
+    "community_links": [
+      {
+        "url": "https://discord.gg/openrouter",
+        "type": "discord",
+        "label": "Discord社区"
+      }
+    ],
+    "description": "国际最大大模型API聚合平台,覆盖300+模型/60+供应商,月处理70万亿tokens。绝大多数模型官方原价不额外加价,有27个免费模型。支持信用卡和加密货币支付。国内需代理访问。",
+    "last_checked_at": null,
+    "created_at": "2026-06-26T07:19:46.232907+00:00",
+    "updated_at": "2026-06-26T07:19:46.232907+00:00"
+  },
+  {
+    "id": "30000000-0000-0000-0000-000000000003",
+    "name": "智谱AI开放平台",
+    "slug": "zhipu",
+    "website_url": "https://open.bigmodel.cn",
+    "logo_url": "",
+    "founded_at": "2023-03-01",
+    "status": "online",
+    "categories": [
+      "chat",
+      "coding",
+      "image_gen",
+      "video_gen",
+      "image_understanding",
+      "audio_tts",
+      "audio_asr",
+      "embedding",
+      "rerank"
+    ],
+    "supported_models": [
+      "glm",
+      "qwen",
+      "deepseek",
+      "yi"
+    ],
+    "openai_compatible": true,
+    "supports_streaming": true,
+    "supports_function_call": true,
+    "price_multiplier": 0.65,
+    "billing_type": "prepaid",
+    "has_free_quota": true,
+    "rate_limit_note": "GLM-4免费额度充足;视频生成按秒计费",
+    "concurrency_limit": null,
+    "payment_methods": [
+      "alipay",
+      "wechat",
+      "card"
+    ],
+    "signup_barrier": "low",
+    "reputation_score": 4.5,
+    "runaway_risk": "low",
+    "community_links": [
+      {
+        "url": "https://open.bigmodel.cn/dev/api",
+        "type": "other",
+        "label": "官方文档"
+      }
+    ],
+    "description": "智谱AI官方开放平台,GLM-4/ChatGLM全系列+第三方模型。覆盖文本对话/图像生成(CogView)/视频生成(CogVideo)/视觉理解(GLM-4V)/语音/Embedding/Rerank全模态。OpenAI兼容,注册即送大量免费额度。A股上市公司,安全可靠。",
+    "last_checked_at": null,
+    "created_at": "2026-06-26T07:26:33.385975+00:00",
+    "updated_at": "2026-06-26T07:26:33.385975+00:00"
+  },
+  {
+    "id": "20000000-0000-0000-0000-000000000007",
+    "name": "硅基流动",
+    "slug": "siliconflow",
+    "website_url": "https://www.siliconflow.cn",
+    "logo_url": "",
+    "founded_at": "2023-06-01",
+    "status": "online",
+    "categories": [
+      "chat",
+      "coding",
+      "embedding",
+      "rerank",
+      "image_gen",
+      "audio_tts"
+    ],
+    "supported_models": [
+      "deepseek",
+      "qwen",
+      "glm",
+      "yi",
+      "llama",
+      "mistral"
+    ],
+    "openai_compatible": true,
+    "supports_streaming": true,
+    "supports_function_call": true,
+    "price_multiplier": 0.6,
+    "billing_type": "prepaid",
+    "has_free_quota": true,
+    "rate_limit_note": "免费额度有RPM限制;付费版可提并发",
+    "concurrency_limit": null,
+    "payment_methods": [
+      "alipay",
+      "wechat"
+    ],
+    "signup_barrier": "low",
+    "reputation_score": 4,
+    "runaway_risk": "low",
+    "community_links": [
+      {
+        "url": "https://discord.gg/siliconflow",
+        "type": "discord",
+        "label": "Discord社区"
+      }
+    ],
+    "description": "国内知名AI推理平台,托管DeepSeek/Qwen/GLM/Yi等主流开源模型。提供大量免费额度(注册即送),付费按量计费价格有竞争力。OpenAI兼容API格式,支持Streaming和Function Call。企业级稳定性。",
+    "last_checked_at": null,
+    "created_at": "2026-06-26T07:19:46.587055+00:00",
+    "updated_at": "2026-06-26T07:19:46.587055+00:00"
+  },
+  {
+    "id": "20000000-0000-0000-0000-000000000001",
+    "name": "PackyAPI",
+    "slug": "packyapi",
+    "website_url": "https://www.packyapi.com",
+    "logo_url": "",
+    "founded_at": "2024-03-01",
+    "status": "online",
+    "categories": [
+      "chat",
+      "coding",
+      "embedding"
+    ],
+    "supported_models": [
+      "openai",
+      "claude",
+      "gemini",
+      "qwen",
+      "deepseek",
+      "glm"
+    ],
+    "openai_compatible": true,
+    "supports_streaming": true,
+    "supports_function_call": true,
+    "price_multiplier": 0.5,
+    "billing_type": "prepaid",
+    "has_free_quota": true,
+    "rate_limit_note": "各分组倍率不同,CC分组专用不可接第三方",
+    "concurrency_limit": null,
+    "payment_methods": [
+      "alipay",
+      "wechat",
+      "card",
+      "paypal"
+    ],
+    "signup_barrier": "low",
+    "reputation_score": 4,
+    "runaway_risk": "low",
+    "community_links": [
+      {
+        "url": "https://t.me/Packycode",
+        "type": "tg",
+        "label": "官方频道"
+      },
+      {
+        "url": "https://qm.qq.com/q/packyapi",
+        "type": "qq",
+        "label": "主站QQ群"
+      }
+    ],
+    "description": "国内最早做Claude Code中转的上游供应商,原名PackyCode。支持27+模型分组(CC/AWS/Azure/Gemini等),可按需选不同倍率。注册送$1余额,首次充值9折。包月站 codex.packycode.com 独立运营。",
+    "last_checked_at": null,
+    "created_at": "2026-06-26T07:19:45.598418+00:00",
+    "updated_at": "2026-06-26T07:19:45.598418+00:00"
+  },
+  {
+    "id": "30000000-0000-0000-0000-000000000002",
+    "name": "火山方舟",
+    "slug": "ark",
+    "website_url": "https://console.volcengine.com/ark",
+    "logo_url": "",
+    "founded_at": "2024-02-01",
+    "status": "online",
+    "categories": [
+      "chat",
+      "coding",
+      "image_gen",
+      "video_gen",
+      "image_understanding",
+      "audio_tts",
+      "audio_asr"
+    ],
+    "supported_models": [
+      "deepseek",
+      "qwen",
+      "glm",
+      "moonshot",
+      "yi"
+    ],
+    "openai_compatible": true,
+    "supports_streaming": true,
+    "supports_function_call": true,
+    "price_multiplier": 0.6,
+    "billing_type": "prepaid",
+    "has_free_quota": true,
+    "rate_limit_note": "豆包系列独有;Seedance视频/Seedream图像独家",
+    "concurrency_limit": null,
+    "payment_methods": [
+      "alipay",
+      "wechat",
+      "card"
+    ],
+    "signup_barrier": "medium",
+    "reputation_score": 4,
+    "runaway_risk": "low",
+    "community_links": [
+      {
+        "url": "https://www.volcengine.com/docs/82379",
+        "type": "other",
+        "label": "官方文档"
+      }
+    ],
+    "description": "字节跳动旗下AI大模型平台,豆包(LLM)/Seedream(图像生成)/Seedance(视频生成)系列独家。同时分发DeepSeek/Qwen/GLM等第三方模型。OpenAI兼容API,注册送体验额度。视频生成和图像生成能力行业领先。",
+    "last_checked_at": null,
+    "created_at": "2026-06-26T07:26:33.251391+00:00",
+    "updated_at": "2026-06-26T07:26:33.251391+00:00"
+  },
+  {
+    "id": "30000000-0000-0000-0000-000000000007",
+    "name": "七牛云AI",
+    "slug": "qiniu-ai",
+    "website_url": "https://www.qiniu.com",
+    "logo_url": "",
+    "founded_at": "2024-04-01",
+    "status": "online",
+    "categories": [
+      "chat",
+      "coding",
+      "image_gen",
+      "video_gen",
+      "image_understanding",
+      "audio_tts",
+      "audio_asr"
+    ],
+    "supported_models": [
+      "openai",
+      "claude",
+      "gemini",
+      "deepseek",
+      "qwen",
+      "glm"
+    ],
+    "openai_compatible": true,
+    "supports_streaming": true,
+    "supports_function_call": true,
+    "price_multiplier": 0.7,
+    "billing_type": "postpaid",
+    "has_free_quota": true,
+    "rate_limit_note": "与存储/CDN/音视频原生集成;媒体链路无缝AI",
+    "concurrency_limit": null,
+    "payment_methods": [
+      "alipay",
+      "wechat",
+      "card"
+    ],
+    "signup_barrier": "medium",
+    "reputation_score": 4,
+    "runaway_risk": "low",
+    "community_links": [
+      {
+        "url": "https://developer.qiniu.com/",
+        "type": "other",
+        "label": "官方文档"
+      }
+    ],
+    "description": "七牛云AI大模型广场,与七牛存储/CDN/音视频服务原生集成。支持Claude/GPT/Gemini/Doubao/DeepSeek/Qwen/GLM等国内外主流模型。媒体处理链路无缝接入AI,适合音视频场景。后付费按量计费。",
+    "last_checked_at": null,
+    "created_at": "2026-06-26T07:26:33.888632+00:00",
+    "updated_at": "2026-06-26T07:26:33.888632+00:00"
+  },
+  {
+    "id": "30000000-0000-0000-0000-000000000008",
+    "name": "百度千帆",
+    "slug": "qianfan",
+    "website_url": "https://console.bce.baidu.com/qianfan",
+    "logo_url": "",
+    "founded_at": "2023-08-01",
+    "status": "online",
+    "categories": [
+      "chat",
+      "coding",
+      "image_gen",
+      "image_understanding",
+      "audio_tts",
+      "audio_asr",
+      "embedding",
+      "rerank"
+    ],
+    "supported_models": [
+      "ernie",
+      "qwen",
+      "deepseek",
+      "glm",
+      "yi"
+    ],
+    "openai_compatible": true,
+    "supports_streaming": true,
+    "supports_function_call": true,
+    "price_multiplier": 0.75,
+    "billing_type": "postpaid",
+    "has_free_quota": true,
+    "rate_limit_note": "文心大模型中文能力最强;政企合规",
+    "concurrency_limit": null,
+    "payment_methods": [
+      "alipay",
+      "wechat",
+      "card"
+    ],
+    "signup_barrier": "medium",
+    "reputation_score": 4,
+    "runaway_risk": "low",
+    "community_links": [
+      {
+        "url": "https://cloud.baidu.com/doc/qianfan.html",
+        "type": "other",
+        "label": "官方文档"
+      }
+    ],
+    "description": "百度智能云AI大模型平台,文心一言(ERNIE)全系列+第三方模型。覆盖文本/图像/语音/Embedding/Rerank,中文理解和生成能力业界领先。政企合规性强,后付费灵活计费。",
+    "last_checked_at": null,
+    "created_at": "2026-06-26T07:26:33.996965+00:00",
+    "updated_at": "2026-06-26T07:26:33.996965+00:00"
+  },
+  {
+    "id": "40000000-0000-0000-0000-000000000001",
+    "name": "星链4SAPI",
+    "slug": "4sapi",
+    "website_url": "https://www.4sapi.com",
+    "logo_url": "",
+    "founded_at": "2024-09-01",
+    "status": "online",
+    "categories": [
+      "chat",
+      "coding",
+      "image_gen",
+      "video_gen",
+      "image_understanding",
+      "audio_tts",
+      "audio_asr",
+      "embedding",
+      "rerank"
+    ],
+    "supported_models": [
+      "openai",
+      "claude",
+      "gemini",
+      "deepseek",
+      "qwen",
+      "glm",
+      "moonshot",
+      "yi",
+      "mistral",
+      "llama"
+    ],
+    "openai_compatible": true,
+    "supports_streaming": true,
+    "supports_function_call": true,
+    "price_multiplier": 0.55,
+    "billing_type": "prepaid",
+    "has_free_quota": true,
+    "rate_limit_note": "三协议原生兼容(OpenAI/Anthropic/Gemini);99.99%SLA;超万级并发",
+    "concurrency_limit": null,
+    "payment_methods": [
+      "alipay",
+      "wechat",
+      "card"
+    ],
+    "signup_barrier": "medium",
+    "reputation_score": 4,
+    "runaway_risk": "low",
+    "community_links": [
+      {
+        "url": "https://docs.4sapi.com",
+        "type": "other",
+        "label": "技术文档"
+      }
+    ],
+    "description": "广州星链引擎旗下企业级API聚合平台。三协议原生兼容(OpenAI/Anthropic/Gemini格式),485+模型覆盖全模态。超万级并发,故障自动切换,子账号管理,支持对公转账和国内发票。99.99%SLA,企业生产环境首选之一。",
+    "last_checked_at": null,
+    "created_at": "2026-06-26T07:34:47.742044+00:00",
+    "updated_at": "2026-06-26T07:34:47.742044+00:00"
+  },
+  {
+    "id": "40000000-0000-0000-0000-000000000003",
+    "name": "非线智能API",
+    "slug": "feixian",
+    "website_url": "https://www.feixianapi.com",
+    "logo_url": "",
+    "founded_at": "2024-10-01",
+    "status": "online",
+    "categories": [
+      "chat",
+      "coding",
+      "image_gen",
+      "video_gen",
+      "image_understanding",
+      "audio_tts",
+      "audio_asr",
+      "embedding",
+      "rerank"
+    ],
+    "supported_models": [
+      "openai",
+      "claude",
+      "gemini",
+      "deepseek",
+      "qwen",
+      "glm",
+      "moonshot",
+      "yi",
+      "mistral",
+      "llama"
+    ],
+    "openai_compatible": true,
+    "supports_streaming": true,
+    "supports_function_call": true,
+    "price_multiplier": 0.5,
+    "billing_type": "prepaid",
+    "has_free_quota": true,
+    "rate_limit_note": "480+模型;三协议兼容;自研chinese-llm-benchmark(6000+GitHub Stars)",
+    "concurrency_limit": null,
+    "payment_methods": [
+      "alipay",
+      "wechat",
+      "card"
+    ],
+    "signup_barrier": "low",
+    "reputation_score": 4,
+    "runaway_risk": "low",
+    "community_links": [
+      {
+        "url": "https://github.com/chinese-llm-benchmark",
+        "type": "other",
+        "label": "GitHub Benchmark"
+      }
+    ],
+    "description": "评测驱动型企业级API聚合平台,维护chinese-llm-benchmark开源项目(6000+ GitHub Stars)。480+模型三协议兼容,Token三级明细审计,支持子账号和团队协作。企业合规性强,是Claude Code/Cursor等工具的首选接入方。",
+    "last_checked_at": null,
+    "created_at": "2026-06-26T07:34:48.239397+00:00",
+    "updated_at": "2026-06-26T07:34:48.239397+00:00"
+  },
+  {
+    "id": "40000000-0000-0000-0000-000000000010",
+    "name": "DeepInfra",
+    "slug": "deepinfra",
+    "website_url": "https://deepinfra.com",
+    "logo_url": "",
+    "founded_at": "2022-06-01",
+    "status": "online",
+    "categories": [
+      "chat",
+      "coding",
+      "image_gen",
+      "embedding",
+      "rerank"
+    ],
+    "supported_models": [
+      "llama",
+      "mistral",
+      "qwen",
+      "deepseek"
+    ],
+    "openai_compatible": true,
+    "supports_streaming": true,
+    "supports_function_call": true,
+    "price_multiplier": 0.35,
+    "billing_type": "prepaid",
+    "has_free_quota": false,
+    "rate_limit_note": "专注开源模型托管推理;按量付费;国外服务需代理",
+    "concurrency_limit": null,
+    "payment_methods": [
+      "card",
+      "crypto_other"
+    ],
+    "signup_barrier": "low",
+    "reputation_score": 4,
+    "runaway_risk": "low",
+    "community_links": [
+      {
+        "url": "https://discord.gg/deepinfra",
+        "type": "discord",
+        "label": "Discord"
+      }
+    ],
+    "description": "专注开源大模型托管推理的国际平台。Llama/Mistral/Qwen/DeepSeek等开源模型一键部署,按量付费,价格极低。支持图像生成(SD/FLUX)和Embedding/Rerank。国内需代理访问,适合有海外服务器的团队。",
+    "last_checked_at": null,
+    "created_at": "2026-06-26T07:34:49.080544+00:00",
+    "updated_at": "2026-06-26T07:34:49.080544+00:00"
+  },
+  {
+    "id": "50000000-0000-0000-0000-000000000001",
+    "name": "Poixe AI",
+    "slug": "poixe",
+    "website_url": "https://www.poixe.com",
+    "logo_url": "",
+    "founded_at": "2024-04-01",
+    "status": "online",
+    "categories": [
+      "chat",
+      "coding"
+    ],
+    "supported_models": [
+      "openai",
+      "claude",
+      "gemini"
+    ],
+    "openai_compatible": true,
+    "supports_streaming": true,
+    "supports_function_call": true,
+    "price_multiplier": 0.85,
+    "billing_type": "prepaid",
+    "has_free_quota": true,
+    "rate_limit_note": "100%正版渠道;接口质量极高无掺水",
+    "concurrency_limit": null,
+    "payment_methods": [
+      "alipay",
+      "wechat",
+      "card"
+    ],
+    "signup_barrier": "low",
+    "reputation_score": 4,
+    "runaway_risk": "low",
+    "community_links": [
+      {
+        "url": "https://discord.gg/poixe",
+        "type": "discord",
+        "label": "Discord社区"
+      }
+    ],
+    "description": "2024年起运营的精品中转站,100%官方正版渠道,接口质量极高无掺水记录。价格虽略高于市场均价,但稳定性极好,适合对模型真实性有严格要求的开发者和企业用户。Discord社区活跃,客服响应快。",
+    "last_checked_at": null,
+    "created_at": "2026-06-26T07:42:36.854135+00:00",
+    "updated_at": "2026-06-26T07:42:36.854135+00:00"
+  },
+  {
+    "id": "30000000-0000-0000-0000-000000000004",
+    "name": "SophNet",
+    "slug": "sophnet",
+    "website_url": "https://www.sophnet.com",
+    "logo_url": "",
     "founded_at": "2024-06-01",
-    "status": "suspect",
-    "supported_models": ["openai", "claude"],
-    "categories": ["chat"],
+    "status": "online",
+    "categories": [
+      "chat",
+      "coding",
+      "image_gen",
+      "audio_asr",
+      "embedding",
+      "rerank"
+    ],
+    "supported_models": [
+      "deepseek",
+      "qwen",
+      "glm"
+    ],
     "openai_compatible": true,
     "supports_streaming": true,
     "supports_function_call": true,
     "price_multiplier": 0.45,
     "billing_type": "prepaid",
     "has_free_quota": true,
-    "rate_limit_note": "未明确公开限制策略",
+    "rate_limit_note": "DeepSeek推理速度100+TPS;SDXL图像生成",
     "concurrency_limit": null,
-    "payment_methods": ["usdt", "crypto_other"],
-    "signup_barrier": "low",
-    "reputation_score": 2.0,
-    "runaway_risk": "high",
-    "community_links": [
-      { "type": "tg", "label": "官方群", "url": "https://t.me/tokenpool_group" }
+    "payment_methods": [
+      "alipay",
+      "wechat"
     ],
-    "description": "价格极低(官方价45%),但仅支持加密货币支付。近期多位用户反馈充值后无法联系客服,站点响应变慢。社区传闻与多个已跑路站点有关联。强烈建议小额测试后谨慎使用。",
-    "last_checked_at": "2026-06-26T08:20:00Z",
-    "created_at": "2024-06-15T00:00:00Z",
-    "updated_at": "2026-06-26T08:20:00Z"
+    "signup_barrier": "low",
+    "reputation_score": 3.5,
+    "runaway_risk": "medium",
+    "community_links": [],
+    "description": "算能科技旗下AI推理平台,主打高性能推理(DeepSeek可达100+TPS)。支持文本对话/SDXL文生图/BGE和M3E向量化/Rerank重排序/语音识别。价格极具竞争力,OpenAI兼容API。适合高吞吐推理场景。",
+    "last_checked_at": null,
+    "created_at": "2026-06-26T07:26:33.534813+00:00",
+    "updated_at": "2026-06-26T07:26:33.534813+00:00"
   },
   {
-    "id": "p006",
-    "name": "ModelHub 国产专线",
-    "slug": "modelhub-cn",
-    "website_url": "https://modelhub-cn.example.com",
-    "logo_url": "/logos/modelhub-cn.png",
-    "founded_at": "2024-04-20",
+    "id": "20000000-0000-0000-0000-000000000003",
+    "name": "0011.ai",
+    "slug": "0011ai",
+    "website_url": "https://0011.ai",
+    "logo_url": "",
+    "founded_at": "2024-06-01",
     "status": "online",
-    "supported_models": ["qwen", "deepseek", "ernie", "glm", "moonshot", "yi"],
-    "categories": ["chat", "coding", "image_gen", "video_gen", "audio_tts", "audio_asr"],
+    "categories": [
+      "chat",
+      "coding"
+    ],
+    "supported_models": [
+      "openai",
+      "claude"
+    ],
     "openai_compatible": true,
     "supports_streaming": true,
-    "supports_function_call": false,
+    "supports_function_call": true,
     "price_multiplier": 0.55,
     "billing_type": "prepaid",
     "has_free_quota": true,
-    "rate_limit_note": "50次/分钟,各模型共用",
-    "concurrency_limit": 8,
-    "payment_methods": ["alipay", "wechat"],
+    "rate_limit_note": "按量$5起充;Pro订阅约$14/月;Ultra每日$16额度",
+    "concurrency_limit": null,
+    "payment_methods": [
+      "alipay",
+      "wechat"
+    ],
+    "signup_barrier": "low",
+    "reputation_score": 3.5,
+    "runaway_risk": "medium",
+    "community_links": [],
+    "description": "Claude Code + OpenAI Codex通用积分平台。按量$5起充,Pro$14/月,Ultra更高档位。微信支付宝直充,无需海外信用卡。可用性99.9%,邀请码注册送$1。费用比官方低40-60%。",
+    "last_checked_at": null,
+    "created_at": "2026-06-26T07:19:46.100264+00:00",
+    "updated_at": "2026-06-26T07:19:46.100264+00:00"
+  },
+  {
+    "id": "20000000-0000-0000-0000-000000000002",
+    "name": "RightCode",
+    "slug": "rightcode",
+    "website_url": "https://www.right.codes",
+    "logo_url": "",
+    "founded_at": "2024-05-01",
+    "status": "online",
+    "categories": [
+      "chat",
+      "coding"
+    ],
+    "supported_models": [
+      "openai",
+      "claude",
+      "gemini"
+    ],
+    "openai_compatible": true,
+    "supports_streaming": true,
+    "supports_function_call": true,
+    "price_multiplier": 0.35,
+    "billing_type": "prepaid",
+    "has_free_quota": false,
+    "rate_limit_note": "Sonnet极稳,Opus经常缺货;Codex包月 ¥1499起",
+    "concurrency_limit": null,
+    "payment_methods": [
+      "alipay",
+      "wechat"
+    ],
+    "signup_barrier": "medium",
+    "reputation_score": 3.5,
+    "runaway_risk": "medium",
+    "community_links": [],
+    "description": "企业级AI Agent中转平台,Codex包月方案完善(小包¥1499/月中包¥2799/月大包¥3999/月)。按量付费1RMB≈3-5USD购买力,最低充值1元。注册可能需要邀请码。",
+    "last_checked_at": null,
+    "created_at": "2026-06-26T07:19:45.950188+00:00",
+    "updated_at": "2026-06-26T07:19:45.950188+00:00"
+  },
+  {
+    "id": "40000000-0000-0000-0000-000000000002",
+    "name": "Weelinking",
+    "slug": "weelinking",
+    "website_url": "https://www.weelinking.com",
+    "logo_url": "",
+    "founded_at": "2024-06-01",
+    "status": "online",
+    "categories": [
+      "chat",
+      "coding",
+      "image_gen",
+      "video_gen",
+      "image_understanding",
+      "audio_tts",
+      "audio_asr",
+      "embedding",
+      "rerank"
+    ],
+    "supported_models": [
+      "openai",
+      "claude",
+      "gemini",
+      "deepseek",
+      "qwen",
+      "glm",
+      "yi",
+      "mistral",
+      "llama"
+    ],
+    "openai_compatible": true,
+    "supports_streaming": true,
+    "supports_function_call": true,
+    "price_multiplier": 0.5,
+    "billing_type": "prepaid",
+    "has_free_quota": true,
+    "rate_limit_note": "智能路由TTFT 20-28ms;多层冗余;99.92%SLA",
+    "concurrency_limit": null,
+    "payment_methods": [
+      "alipay",
+      "wechat",
+      "card"
+    ],
+    "signup_barrier": "low",
+    "reputation_score": 3.5,
+    "runaway_risk": "low",
+    "community_links": [
+      {
+        "url": "https://docs.weelinking.com",
+        "type": "other",
+        "label": "API文档"
+      }
+    ],
+    "description": "企业级AI大模型中台,智能路由和多层冗余架构。TTFT仅20-28ms,99.92%SLA保障。支持全模态(文本/图像/视频/语音/Embedding/Rerank),适用于金融/制造/医疗等对稳定性要求高的行业。",
+    "last_checked_at": null,
+    "created_at": "2026-06-26T07:34:48.114322+00:00",
+    "updated_at": "2026-06-26T07:34:48.114322+00:00"
+  },
+  {
+    "id": "40000000-0000-0000-0000-000000000005",
+    "name": "147API",
+    "slug": "147api",
+    "website_url": "https://www.147api.com",
+    "logo_url": "",
+    "founded_at": "2024-07-01",
+    "status": "online",
+    "categories": [
+      "chat",
+      "coding",
+      "embedding",
+      "rerank"
+    ],
+    "supported_models": [
+      "openai",
+      "claude",
+      "gemini",
+      "deepseek",
+      "qwen",
+      "glm"
+    ],
+    "openai_compatible": true,
+    "supports_streaming": true,
+    "supports_function_call": true,
+    "price_multiplier": 0.45,
+    "billing_type": "prepaid",
+    "has_free_quota": true,
+    "rate_limit_note": "99.9%SLA;设计通俗易懂,低认知负载",
+    "concurrency_limit": null,
+    "payment_methods": [
+      "alipay",
+      "wechat"
+    ],
+    "signup_barrier": "low",
+    "reputation_score": 3.5,
+    "runaway_risk": "medium",
+    "community_links": [],
+    "description": "均衡全能型API中转站,界面设计通俗易懂。覆盖主流国内外模型,99.9%SLA保障,特别适合个人开发者和中小团队入门使用。价格亲民,注册送体验额度。",
+    "last_checked_at": null,
+    "created_at": "2026-06-26T07:34:48.500435+00:00",
+    "updated_at": "2026-06-26T07:34:48.500435+00:00"
+  },
+  {
+    "id": "50000000-0000-0000-0000-000000000014",
+    "name": "Levolink AI",
+    "slug": "levolink",
+    "website_url": "https://ai.levolink.com",
+    "logo_url": "",
+    "founded_at": "2024-06-01",
+    "status": "online",
+    "categories": [
+      "chat",
+      "coding",
+      "embedding"
+    ],
+    "supported_models": [
+      "openai",
+      "claude",
+      "gemini",
+      "deepseek",
+      "qwen",
+      "glm"
+    ],
+    "openai_compatible": true,
+    "supports_streaming": true,
+    "supports_function_call": true,
+    "price_multiplier": 0.5,
+    "billing_type": "prepaid",
+    "has_free_quota": true,
+    "rate_limit_note": "500+模型;老用户用了一年多;覆盖全面",
+    "concurrency_limit": null,
+    "payment_methods": [
+      "alipay",
+      "wechat"
+    ],
     "signup_barrier": "low",
     "reputation_score": 3.5,
     "runaway_risk": "medium",
     "community_links": [
-      { "type": "qq", "label": "官方QQ群", "url": "https://qm.qq.com/q/modelhub" },
-      { "type": "wechat_group", "label": "微信群(扫码)", "url": "https://modelhub-cn.example.com/wechat-qr" }
+      {
+        "url": "https://ai.levolink.com",
+        "type": "other",
+        "label": "站点首页"
+      }
     ],
-    "description": "专注国产大模型中转,通义千问/文心/DeepSeek/智谱全覆盖。价格约为官方的55%,免费额度每日30次。适合国内开发者和中小团队低成本接入国产模型。",
-    "last_checked_at": "2026-06-26T08:25:00Z",
-    "created_at": "2024-05-01T00:00:00Z",
-    "updated_at": "2026-06-26T08:25:00Z"
+    "description": "社区老用户推荐的综合型中转站,一位开发者用了一年多。500+模型覆盖广泛,从GPT/Claude到国产DeepSeek/Qwen/GLM均有支持。提供Embedding能力,适合需要多模型切换的开发场景。",
+    "last_checked_at": null,
+    "created_at": "2026-06-26T07:42:38.70416+00:00",
+    "updated_at": "2026-06-26T07:42:38.70416+00:00"
   },
   {
-    "id": "p007",
-    "name": "LLMProxy 国际站",
-    "slug": "llmproxy-global",
-    "website_url": "https://llmproxy-global.example.com",
-    "logo_url": "/logos/llmproxy-global.png",
-    "founded_at": "2023-12-01",
-    "status": "online",
-    "supported_models": ["openai", "claude", "gemini", "mistral", "llama"],
-    "categories": ["chat", "coding", "embedding"],
-    "openai_compatible": true,
-    "supports_streaming": true,
-    "supports_function_call": true,
-    "price_multiplier": 0.90,
-    "billing_type": "postpaid",
-    "has_free_quota": false,
-    "rate_limit_note": "按账户等级,标准版不限制",
-    "concurrency_limit": null,
-    "payment_methods": ["card", "paypal", "usdt"],
-    "signup_barrier": "medium",
-    "reputation_score": 4.0,
-    "runaway_risk": "low",
-    "community_links": [
-      { "type": "discord", "label": "Discord社区", "url": "https://discord.gg/llmproxy" },
-      { "type": "tg", "label": "Telegram群", "url": "https://t.me/llmproxy_global" }
-    ],
-    "description": "主打海外线路优化,延迟对标官方API。采用后付费模式,先用后付,按自然月结算。支持企业发票。适合有海外业务的团队和独立开发者。",
-    "last_checked_at": "2026-06-26T08:30:00Z",
-    "created_at": "2024-01-20T00:00:00Z",
-    "updated_at": "2026-06-26T08:30:00Z"
-  },
-  {
-    "id": "p008",
-    "name": "AIStudio China",
-    "slug": "aistudio-china",
-    "website_url": "https://aistudio-china.example.com",
-    "logo_url": "/logos/aistudio-china.png",
+    "id": "50000000-0000-0000-0000-000000000003",
+    "name": "Unity2.ai",
+    "slug": "unity2",
+    "website_url": "https://www.unity2.ai",
+    "logo_url": "",
     "founded_at": "2024-08-01",
     "status": "online",
-    "supported_models": ["openai", "claude", "qwen", "deepseek", "glm"],
-    "categories": ["chat", "coding", "image_gen", "image_understanding"],
-    "openai_compatible": true,
-    "supports_streaming": true,
-    "supports_function_call": true,
-    "price_multiplier": 0.85,
-    "billing_type": "subscription",
-    "has_free_quota": true,
-    "rate_limit_note": "免费版 10次/分钟,Pro 100次/分钟,Enterprise 无限制",
-    "concurrency_limit": 20,
-    "payment_methods": ["alipay", "wechat", "card"],
-    "signup_barrier": "medium",
-    "reputation_score": 4.0,
-    "runaway_risk": "low",
-    "community_links": [
-      { "type": "tg", "label": "官方通知群", "url": "https://t.me/aistudio_china" },
-      { "type": "qq", "label": "用户交流群", "url": "https://qm.qq.com/q/aistudio" }
+    "categories": [
+      "chat",
+      "coding",
+      "image_gen"
     ],
-    "description": "有知名科技媒体背景,团队信息公开透明。月付订阅制,提供免费套餐(每日100次)。有完善的API文档和中文技术支持。新站但增长迅速。",
-    "last_checked_at": "2026-06-26T08:35:00Z",
-    "created_at": "2024-08-20T00:00:00Z",
-    "updated_at": "2026-06-26T08:35:00Z"
-  },
-  {
-    "id": "p009",
-    "name": "GPTHub",
-    "slug": "gpthub",
-    "website_url": "https://gpthub.example.com",
-    "logo_url": "/logos/gpthub.png",
-    "founded_at": "2023-03-15",
-    "status": "dead",
-    "supported_models": ["openai", "claude"],
-    "categories": ["chat", "coding"],
+    "supported_models": [
+      "openai",
+      "claude",
+      "gemini",
+      "deepseek"
+    ],
     "openai_compatible": true,
     "supports_streaming": true,
     "supports_function_call": true,
-    "price_multiplier": 0.70,
-    "billing_type": "prepaid",
-    "has_free_quota": false,
-    "rate_limit_note": "已停止服务",
-    "concurrency_limit": null,
-    "payment_methods": ["alipay", "wechat"],
-    "signup_barrier": "low",
-    "reputation_score": 1.0,
-    "runaway_risk": "high",
-    "community_links": [],
-    "description": "曾经是知名的 OpenAI 专线中转,2025年11月突然关站,大量用户余额无法退款。客服和社群全部失联。此处保留记录以警示后来者。",
-    "last_checked_at": "2026-06-26T08:40:00Z",
-    "created_at": "2024-03-01T00:00:00Z",
-    "updated_at": "2026-06-26T08:40:00Z"
-  },
-  {
-    "id": "p010",
-    "name": "UniAPI 新势力",
-    "slug": "uniapi",
-    "website_url": "https://uniapi.example.com",
-    "logo_url": "/logos/uniapi.png",
-    "founded_at": "2025-09-01",
-    "status": "online",
-    "supported_models": ["openai", "claude", "gemini", "deepseek", "qwen"],
-    "categories": ["chat", "coding", "image_gen", "audio_tts", "embedding"],
-    "openai_compatible": true,
-    "supports_streaming": true,
-    "supports_function_call": true,
-    "price_multiplier": 0.72,
+    "price_multiplier": 0.55,
     "billing_type": "prepaid",
     "has_free_quota": true,
-    "rate_limit_note": "普通用户 60次/分钟",
-    "concurrency_limit": 15,
-    "payment_methods": ["alipay", "wechat", "usdt"],
+    "rate_limit_note": "套餐体系完整;注册送$2体验金;L站口碑好",
+    "concurrency_limit": null,
+    "payment_methods": [
+      "alipay",
+      "wechat",
+      "usdt"
+    ],
     "signup_barrier": "low",
-    "reputation_score": 3.0,
+    "reputation_score": 3.5,
     "runaway_risk": "medium",
     "community_links": [
-      { "type": "tg", "label": "官方群", "url": "https://t.me/uniapi_official" },
-      { "type": "discord", "label": "Discord", "url": "https://discord.gg/uniapi" }
+      {
+        "url": "https://discord.gg/unity2",
+        "type": "discord",
+        "label": "Discord"
+      }
     ],
-    "description": "2025年新上线的中转站,功能全面(streaming/function call 均支持),价格有竞争力。运营时间较短,尚待时间验证。新用户注册即送 200 次免费调用额度。",
-    "last_checked_at": "2026-06-26T08:45:00Z",
-    "created_at": "2025-09-15T00:00:00Z",
-    "updated_at": "2026-06-26T08:45:00Z"
+    "description": "套餐体系完整的API中转站,LINUX DO和V2EX社区口碑较好。注册送$2体验金,按量付费和套餐制并存。支持文本对话和GPT图像生成,适合从入门到进阶的各类用户。",
+    "last_checked_at": null,
+    "created_at": "2026-06-26T07:42:37.351487+00:00",
+    "updated_at": "2026-06-26T07:42:37.351487+00:00"
+  },
+  {
+    "id": "50000000-0000-0000-0000-000000000004",
+    "name": "星道智能",
+    "slug": "xingdao",
+    "website_url": "https://www.xycai.cn",
+    "logo_url": "",
+    "founded_at": "2024-05-01",
+    "status": "online",
+    "categories": [
+      "chat",
+      "coding",
+      "embedding",
+      "rerank"
+    ],
+    "supported_models": [
+      "openai",
+      "claude",
+      "gemini",
+      "deepseek",
+      "qwen",
+      "glm"
+    ],
+    "openai_compatible": true,
+    "supports_streaming": true,
+    "supports_function_call": true,
+    "price_multiplier": 0.4,
+    "billing_type": "prepaid",
+    "has_free_quota": true,
+    "rate_limit_note": "正规ICP备案;企业合规;GPT-5.5 2.2折",
+    "concurrency_limit": null,
+    "payment_methods": [
+      "alipay",
+      "wechat",
+      "card"
+    ],
+    "signup_barrier": "medium",
+    "reputation_score": 3.5,
+    "runaway_risk": "low",
+    "community_links": [
+      {
+        "url": "https://beian.miit.gov.cn/",
+        "type": "other",
+        "label": "企业信息"
+      }
+    ],
+    "description": "拥有正规ICP备案的企业级中转站,合规性在行业内领先。GPT-5.5低至2.2折,价格极具竞争力。支持Embedding和Rerank,适合有合规需求的企业开发团队。正规备案降低了跑路风险。",
+    "last_checked_at": null,
+    "created_at": "2026-06-26T07:42:37.491784+00:00",
+    "updated_at": "2026-06-26T07:42:37.491784+00:00"
+  },
+  {
+    "id": "20000000-0000-0000-0000-000000000008",
+    "name": "302.AI",
+    "slug": "302ai",
+    "website_url": "https://302.ai",
+    "logo_url": "",
+    "founded_at": "2024-08-01",
+    "status": "online",
+    "categories": [
+      "chat",
+      "coding",
+      "image_gen",
+      "audio_tts"
+    ],
+    "supported_models": [
+      "openai",
+      "claude",
+      "gemini",
+      "deepseek",
+      "qwen",
+      "glm",
+      "mistral",
+      "llama"
+    ],
+    "openai_compatible": true,
+    "supports_streaming": true,
+    "supports_function_call": true,
+    "price_multiplier": 0.65,
+    "billing_type": "prepaid",
+    "has_free_quota": true,
+    "rate_limit_note": "按套餐等级限制",
+    "concurrency_limit": null,
+    "payment_methods": [
+      "alipay",
+      "wechat",
+      "card"
+    ],
+    "signup_barrier": "low",
+    "reputation_score": 3.5,
+    "runaway_risk": "medium",
+    "community_links": [],
+    "description": "AI应用平台,同时提供API中转功能。支持OpenAI/Claude/Gemini及国产主流模型。注册送体验额度,按量付费。接口兼容OpenAI格式。",
+    "last_checked_at": null,
+    "created_at": "2026-06-26T07:19:46.705004+00:00",
+    "updated_at": "2026-06-26T07:19:46.705004+00:00"
+  },
+  {
+    "id": "40000000-0000-0000-0000-000000000004",
+    "name": "KoalaAPI",
+    "slug": "koalaapi",
+    "website_url": "https://www.koalaapi.com",
+    "logo_url": "",
+    "founded_at": "2024-11-01",
+    "status": "online",
+    "categories": [
+      "chat",
+      "coding",
+      "image_gen",
+      "video_gen",
+      "image_understanding",
+      "embedding",
+      "rerank"
+    ],
+    "supported_models": [
+      "openai",
+      "claude",
+      "gemini",
+      "deepseek",
+      "qwen",
+      "glm"
+    ],
+    "openai_compatible": true,
+    "supports_streaming": true,
+    "supports_function_call": true,
+    "price_multiplier": 0.6,
+    "billing_type": "prepaid",
+    "has_free_quota": true,
+    "rate_limit_note": "动态路由;自定义故障转移;Agent网络构建",
+    "concurrency_limit": null,
+    "payment_methods": [
+      "alipay",
+      "wechat"
+    ],
+    "signup_barrier": "low",
+    "reputation_score": 3,
+    "runaway_risk": "medium",
+    "community_links": [
+      {
+        "url": "https://blog.koalaapi.com",
+        "type": "other",
+        "label": "技术博客"
+      }
+    ],
+    "description": "专注于复杂Agent网络的API中转平台。支持动态路由与自定义故障转移策略,适合构建多模型链式调用和RAG流程。覆盖文本/图像/视频/Embedding/Rerank全模态。",
+    "last_checked_at": null,
+    "created_at": "2026-06-26T07:34:48.379957+00:00",
+    "updated_at": "2026-06-26T07:34:48.379957+00:00"
+  },
+  {
+    "id": "20000000-0000-0000-0000-000000000006",
+    "name": "ClaudeAPI",
+    "slug": "claudeapi",
+    "website_url": "https://www.claudeapi.com",
+    "logo_url": "",
+    "founded_at": "2024-04-01",
+    "status": "online",
+    "categories": [
+      "chat",
+      "coding"
+    ],
+    "supported_models": [
+      "claude",
+      "openai"
+    ],
+    "openai_compatible": true,
+    "supports_streaming": true,
+    "supports_function_call": true,
+    "price_multiplier": 0.75,
+    "billing_type": "prepaid",
+    "has_free_quota": false,
+    "rate_limit_note": "全球加速节点,延迟<200ms,可用性99.8%",
+    "concurrency_limit": null,
+    "payment_methods": [
+      "alipay",
+      "wechat"
+    ],
+    "signup_barrier": "low",
+    "reputation_score": 3,
+    "runaway_risk": "medium",
+    "community_links": [],
+    "description": "专注Claude模型的中转服务,全球加速节点延迟<200ms,可用性99.8%。完全兼容OpenAI SDK,微信支付宝直接充值。适合对延迟敏感的Claude API调用场景。",
+    "last_checked_at": null,
+    "created_at": "2026-06-26T07:19:46.468653+00:00",
+    "updated_at": "2026-06-26T07:19:46.468653+00:00"
+  },
+  {
+    "id": "40000000-0000-0000-0000-000000000006",
+    "name": "AIHubMix",
+    "slug": "aihubmix",
+    "website_url": "https://www.aihubmix.com",
+    "logo_url": "",
+    "founded_at": "2025-02-01",
+    "status": "online",
+    "categories": [
+      "chat",
+      "coding",
+      "image_gen",
+      "video_gen",
+      "embedding",
+      "rerank"
+    ],
+    "supported_models": [
+      "openai",
+      "claude",
+      "gemini",
+      "deepseek",
+      "qwen",
+      "glm"
+    ],
+    "openai_compatible": true,
+    "supports_streaming": true,
+    "supports_function_call": true,
+    "price_multiplier": 0.55,
+    "billing_type": "prepaid",
+    "has_free_quota": true,
+    "rate_limit_note": "60+模型;接入速度快;适合原型验证",
+    "concurrency_limit": null,
+    "payment_methods": [
+      "alipay",
+      "wechat"
+    ],
+    "signup_barrier": "low",
+    "reputation_score": 3,
+    "runaway_risk": "medium",
+    "community_links": [],
+    "description": "轻量快速接入型API聚合平台,60+模型覆盖主流国内外厂商。接入速度快,上手成本低,适合原型验证和中小团队功能测试。支持图像生成/视频生成/Embedding/Rerank等能力。",
+    "last_checked_at": null,
+    "created_at": "2026-06-26T07:34:48.620602+00:00",
+    "updated_at": "2026-06-26T07:34:48.620602+00:00"
+  },
+  {
+    "id": "40000000-0000-0000-0000-000000000007",
+    "name": "PoloAPI",
+    "slug": "poloapi",
+    "website_url": "https://www.poloapi.com",
+    "logo_url": "",
+    "founded_at": "2025-01-01",
+    "status": "online",
+    "categories": [
+      "chat",
+      "coding",
+      "image_gen",
+      "audio_tts",
+      "audio_asr"
+    ],
+    "supported_models": [
+      "openai",
+      "claude",
+      "gemini",
+      "deepseek",
+      "qwen"
+    ],
+    "openai_compatible": true,
+    "supports_streaming": true,
+    "supports_function_call": true,
+    "price_multiplier": 0.4,
+    "billing_type": "prepaid",
+    "has_free_quota": true,
+    "rate_limit_note": "极致轻量;按次计费;预算友好",
+    "concurrency_limit": null,
+    "payment_methods": [
+      "alipay",
+      "wechat"
+    ],
+    "signup_barrier": "low",
+    "reputation_score": 3,
+    "runaway_risk": "medium",
+    "community_links": [],
+    "description": "极致轻量的API中转站,按次计费,成本透明。支持文本/图像/语音(TTS+ASR)能力。适合预算敏感的个人开发者和小规模应用。高并发友好,自助接入无需人工审核。",
+    "last_checked_at": null,
+    "created_at": "2026-06-26T07:34:48.734147+00:00",
+    "updated_at": "2026-06-26T07:34:48.734147+00:00"
+  },
+  {
+    "id": "40000000-0000-0000-0000-000000000008",
+    "name": "诗云API",
+    "slug": "shiyunapi",
+    "website_url": "https://www.shiyunapi.com",
+    "logo_url": "",
+    "founded_at": "2025-04-01",
+    "status": "online",
+    "categories": [
+      "chat",
+      "coding",
+      "image_gen",
+      "video_gen",
+      "image_understanding",
+      "embedding",
+      "rerank"
+    ],
+    "supported_models": [
+      "openai",
+      "claude",
+      "gemini",
+      "deepseek",
+      "qwen",
+      "glm",
+      "moonshot"
+    ],
+    "openai_compatible": true,
+    "supports_streaming": true,
+    "supports_function_call": true,
+    "price_multiplier": 0.5,
+    "billing_type": "prepaid",
+    "has_free_quota": true,
+    "rate_limit_note": "新兴模型跟进极快;多模态支持全面",
+    "concurrency_limit": null,
+    "payment_methods": [
+      "alipay",
+      "wechat"
+    ],
+    "signup_barrier": "low",
+    "reputation_score": 3,
+    "runaway_risk": "medium",
+    "community_links": [
+      {
+        "url": "https://www.shiyunapi.com/changelog",
+        "type": "other",
+        "label": "更新日志"
+      }
+    ],
+    "description": "以模型跟进速度著称的API聚合平台,新模型上线速度行业领先。覆盖文本/图像生成/视频生成/图像理解/Embedding/Rerank,多模态支持全面。适合喜欢尝鲜新模型的开发者和研究者。",
+    "last_checked_at": null,
+    "created_at": "2026-06-26T07:34:48.854113+00:00",
+    "updated_at": "2026-06-26T07:34:48.854113+00:00"
+  },
+  {
+    "id": "40000000-0000-0000-0000-000000000009",
+    "name": "TreeRouter",
+    "slug": "treerouter",
+    "website_url": "https://www.treerouter.com",
+    "logo_url": "",
+    "founded_at": "2025-03-01",
+    "status": "online",
+    "categories": [
+      "chat",
+      "coding",
+      "image_gen",
+      "image_understanding",
+      "audio_tts",
+      "audio_asr",
+      "embedding",
+      "rerank"
+    ],
+    "supported_models": [
+      "openai",
+      "claude",
+      "gemini",
+      "deepseek",
+      "qwen",
+      "glm",
+      "yi",
+      "llama"
+    ],
+    "openai_compatible": true,
+    "supports_streaming": true,
+    "supports_function_call": true,
+    "price_multiplier": 0.55,
+    "billing_type": "prepaid",
+    "has_free_quota": true,
+    "rate_limit_note": "多模态能力中心;统一网关鉴权",
+    "concurrency_limit": null,
+    "payment_methods": [
+      "alipay",
+      "wechat",
+      "usdt"
+    ],
+    "signup_barrier": "low",
+    "reputation_score": 3,
+    "runaway_risk": "medium",
+    "community_links": [
+      {
+        "url": "https://docs.treerouter.com",
+        "type": "other",
+        "label": "API参考"
+      }
+    ],
+    "description": "多模态能力中心型API网关,文本/视觉/音频全栈覆盖。统一网关鉴权,简化多模型接入复杂度。支持Embedding和Rerank,适合需要文本+图像+语音综合能力的AI应用。",
+    "last_checked_at": null,
+    "created_at": "2026-06-26T07:34:48.959817+00:00",
+    "updated_at": "2026-06-26T07:34:48.959817+00:00"
+  },
+  {
+    "id": "30000000-0000-0000-0000-000000000005",
+    "name": "TokenMarket",
+    "slug": "tokenmarket",
+    "website_url": "https://www.tokenmarket.cn",
+    "logo_url": "",
+    "founded_at": "2025-09-01",
+    "status": "online",
+    "categories": [
+      "chat",
+      "coding",
+      "image_gen",
+      "video_gen",
+      "image_understanding",
+      "audio_tts",
+      "audio_asr",
+      "embedding",
+      "rerank"
+    ],
+    "supported_models": [
+      "openai",
+      "claude",
+      "gemini",
+      "deepseek",
+      "qwen",
+      "glm",
+      "moonshot",
+      "yi",
+      "llama",
+      "mistral"
+    ],
+    "openai_compatible": true,
+    "supports_streaming": true,
+    "supports_function_call": true,
+    "price_multiplier": 0.55,
+    "billing_type": "prepaid",
+    "has_free_quota": true,
+    "rate_limit_note": "聚合60+厂商300+模型;全模态覆盖",
+    "concurrency_limit": null,
+    "payment_methods": [
+      "alipay",
+      "wechat",
+      "usdt"
+    ],
+    "signup_barrier": "low",
+    "reputation_score": 3,
+    "runaway_risk": "medium",
+    "community_links": [
+      {
+        "url": "https://t.me/tokenmarket_cn",
+        "type": "tg",
+        "label": "官方频道"
+      }
+    ],
+    "description": "2025年底上线的全模态API聚合平台,并购整合60+厂商300+模型。覆盖文本/图像/视频/语音/代码/Embedding全类型。OpenAI完全兼容,一个API Key调用所有模型。新站增长迅速,全模态覆盖最完整的新平台之一。",
+    "last_checked_at": null,
+    "created_at": "2026-06-26T07:26:33.668912+00:00",
+    "updated_at": "2026-06-26T07:26:33.668912+00:00"
+  },
+  {
+    "id": "20000000-0000-0000-0000-000000000005",
+    "name": "aigocode",
+    "slug": "aigocode",
+    "website_url": "https://www.aigocode.com",
+    "logo_url": "",
+    "founded_at": "2024-07-01",
+    "status": "online",
+    "categories": [
+      "chat",
+      "coding"
+    ],
+    "supported_models": [
+      "openai",
+      "claude",
+      "gemini"
+    ],
+    "openai_compatible": true,
+    "supports_streaming": true,
+    "supports_function_call": true,
+    "price_multiplier": 0.4,
+    "billing_type": "subscription",
+    "has_free_quota": false,
+    "rate_limit_note": "月卡¥399/4周;不同方案价格不同",
+    "concurrency_limit": null,
+    "payment_methods": [
+      "alipay",
+      "wechat"
+    ],
+    "signup_barrier": "low",
+    "reputation_score": 3,
+    "runaway_risk": "medium",
+    "community_links": [],
+    "description": "以月卡订阅为主的中转站,Opus 4.6按方案¥2~9/百万Token。月卡约¥399/4周。社区口碑尚可,未发现以低端模型冒充高端模型的报告。",
+    "last_checked_at": null,
+    "created_at": "2026-06-26T07:19:46.354645+00:00",
+    "updated_at": "2026-06-26T07:19:46.354645+00:00"
+  },
+  {
+    "id": "50000000-0000-0000-0000-000000000005",
+    "name": "WinToken",
+    "slug": "wintoken",
+    "website_url": "https://www.wintoken.cn",
+    "logo_url": "",
+    "founded_at": "2025-06-01",
+    "status": "online",
+    "categories": [
+      "chat",
+      "coding",
+      "image_gen",
+      "embedding"
+    ],
+    "supported_models": [
+      "openai",
+      "claude",
+      "gemini",
+      "deepseek",
+      "qwen"
+    ],
+    "openai_compatible": true,
+    "supports_streaming": true,
+    "supports_function_call": true,
+    "price_multiplier": 0.5,
+    "billing_type": "prepaid",
+    "has_free_quota": true,
+    "rate_limit_note": "新人福利高达113元免费额度;统一API Key多模型",
+    "concurrency_limit": null,
+    "payment_methods": [
+      "alipay",
+      "wechat"
+    ],
+    "signup_barrier": "low",
+    "reputation_score": 3,
+    "runaway_risk": "medium",
+    "community_links": [
+      {
+        "url": "https://t.me/wintoken_cn",
+        "type": "tg",
+        "label": "官方频道"
+      }
+    ],
+    "description": "新人福利力度极大的中转站,注册即送高额免费额度(最高113元)。统一API Key调用多模型,支持文本/图像/Embedding。适合初次接触API中转的新用户低成本体验。",
+    "last_checked_at": null,
+    "created_at": "2026-06-26T07:42:37.622952+00:00",
+    "updated_at": "2026-06-26T07:42:37.622952+00:00"
+  },
+  {
+    "id": "50000000-0000-0000-0000-000000000006",
+    "name": "Lumin AI",
+    "slug": "luminai",
+    "website_url": "https://www.luminai.cn",
+    "logo_url": "",
+    "founded_at": "2025-03-01",
+    "status": "online",
+    "categories": [
+      "chat",
+      "coding",
+      "image_gen",
+      "audio_tts"
+    ],
+    "supported_models": [
+      "openai",
+      "claude",
+      "gemini",
+      "deepseek",
+      "qwen"
+    ],
+    "openai_compatible": true,
+    "supports_streaming": true,
+    "supports_function_call": true,
+    "price_multiplier": 0.38,
+    "billing_type": "prepaid",
+    "has_free_quota": true,
+    "rate_limit_note": "5元起充;极低门槛;性价比路线",
+    "concurrency_limit": null,
+    "payment_methods": [
+      "alipay",
+      "wechat"
+    ],
+    "signup_barrier": "low",
+    "reputation_score": 3,
+    "runaway_risk": "medium",
+    "community_links": [
+      {
+        "url": "https://t.me/luminai_cn",
+        "type": "tg",
+        "label": "Telegram"
+      }
+    ],
+    "description": "极致性价比路线的中转站,5元起充,适合预算紧张的个人开发者。支持文本/图像生成/语音合成,覆盖常用AI能力。Kiro模型¥2/百万token,在同类产品中价格极低。",
+    "last_checked_at": null,
+    "created_at": "2026-06-26T07:42:37.749218+00:00",
+    "updated_at": "2026-06-26T07:42:37.749218+00:00"
+  },
+  {
+    "id": "30000000-0000-0000-0000-000000000006",
+    "name": "ChinaLLM",
+    "slug": "chinallm",
+    "website_url": "https://www.chinallmapi.com",
+    "logo_url": "",
+    "founded_at": "2024-11-01",
+    "status": "online",
+    "categories": [
+      "chat",
+      "coding",
+      "image_gen",
+      "audio_tts",
+      "audio_asr",
+      "embedding",
+      "rerank"
+    ],
+    "supported_models": [
+      "openai",
+      "claude",
+      "gemini",
+      "deepseek",
+      "qwen",
+      "glm",
+      "moonshot"
+    ],
+    "openai_compatible": true,
+    "supports_streaming": true,
+    "supports_function_call": true,
+    "price_multiplier": 0.5,
+    "billing_type": "prepaid",
+    "has_free_quota": true,
+    "rate_limit_note": "OpenAI完全兼容;ProductHunt收录",
+    "concurrency_limit": null,
+    "payment_methods": [
+      "alipay",
+      "wechat",
+      "card"
+    ],
+    "signup_barrier": "low",
+    "reputation_score": 3,
+    "runaway_risk": "medium",
+    "community_links": [
+      {
+        "url": "https://github.com/Chinallmapi",
+        "type": "other",
+        "label": "GitHub"
+      }
+    ],
+    "description": "ProductHunt收录的OpenAI兼容API网关。一站式转发GPT/Claude/Gemini/DeepSeek/GLM/Qwen等模型。支持Chat/图像(gpt-image-2)/语音(TTS+转录)/Embedding/Rerank。注册送体验额度,社区活跃。",
+    "last_checked_at": null,
+    "created_at": "2026-06-26T07:26:33.781253+00:00",
+    "updated_at": "2026-06-26T07:26:33.781253+00:00"
+  },
+  {
+    "id": "50000000-0000-0000-0000-000000000010",
+    "name": "米醋API",
+    "slug": "micuapi",
+    "website_url": "https://www.openclaudecode.cn",
+    "logo_url": "",
+    "founded_at": "2024-10-01",
+    "status": "online",
+    "categories": [
+      "chat",
+      "coding"
+    ],
+    "supported_models": [
+      "openai",
+      "claude",
+      "gemini"
+    ],
+    "openai_compatible": true,
+    "supports_streaming": true,
+    "supports_function_call": true,
+    "price_multiplier": 0.3,
+    "billing_type": "prepaid",
+    "has_free_quota": true,
+    "rate_limit_note": "价格约为头部站一半;模型真实不掺水",
+    "concurrency_limit": null,
+    "payment_methods": [
+      "alipay",
+      "wechat"
+    ],
+    "signup_barrier": "low",
+    "reputation_score": 3,
+    "runaway_risk": "medium",
+    "community_links": [
+      {
+        "url": "https://t.me/micuapi",
+        "type": "tg",
+        "label": "Telegram"
+      }
+    ],
+    "description": "以性价比著称的中转站,价格约为PackyAPI等头部站的一半。社区反馈模型真实不掺水,Claude Code运行稳定。适合对价格敏感但不希望模型被掉包的开发者。",
+    "last_checked_at": null,
+    "created_at": "2026-06-26T07:42:38.243092+00:00",
+    "updated_at": "2026-06-26T07:42:38.243092+00:00"
+  },
+  {
+    "id": "50000000-0000-0000-0000-000000000008",
+    "name": "IKunCode",
+    "slug": "ikuncode",
+    "website_url": "https://www.ikuncode.com",
+    "logo_url": "",
+    "founded_at": "2024-07-01",
+    "status": "online",
+    "categories": [
+      "chat",
+      "coding"
+    ],
+    "supported_models": [
+      "openai",
+      "claude",
+      "gemini"
+    ],
+    "openai_compatible": true,
+    "supports_streaming": true,
+    "supports_function_call": true,
+    "price_multiplier": 0.3,
+    "billing_type": "prepaid",
+    "has_free_quota": false,
+    "rate_limit_note": "专注编程;GPT-5.5约¥1/M;公开状态监控页",
+    "concurrency_limit": null,
+    "payment_methods": [
+      "alipay",
+      "wechat"
+    ],
+    "signup_barrier": "low",
+    "reputation_score": 3,
+    "runaway_risk": "medium",
+    "community_links": [
+      {
+        "url": "https://qm.qq.com/q/ikuncode",
+        "type": "qq",
+        "label": "QQ群"
+      }
+    ],
+    "description": "专注编程场景的API中转站,GPT-5.5低至¥1/百万token。有公开状态监控页,透明化运营。QQ群活跃,问题响应快。适合Claude Code/Cursor等AI编程工具接入,性价比极高。",
+    "last_checked_at": null,
+    "created_at": "2026-06-26T07:42:37.999404+00:00",
+    "updated_at": "2026-06-26T07:42:37.999404+00:00"
+  },
+  {
+    "id": "20000000-0000-0000-0000-000000000009",
+    "name": "API易",
+    "slug": "apiyi",
+    "website_url": "https://www.apiyi.com",
+    "logo_url": "",
+    "founded_at": "2023-09-01",
+    "status": "online",
+    "categories": [
+      "chat",
+      "coding"
+    ],
+    "supported_models": [
+      "openai",
+      "claude",
+      "gemini",
+      "qwen",
+      "deepseek"
+    ],
+    "openai_compatible": true,
+    "supports_streaming": true,
+    "supports_function_call": true,
+    "price_multiplier": 0.55,
+    "billing_type": "prepaid",
+    "has_free_quota": true,
+    "rate_limit_note": "未明确公开限制策略",
+    "concurrency_limit": null,
+    "payment_methods": [
+      "alipay",
+      "wechat"
+    ],
+    "signup_barrier": "low",
+    "reputation_score": 3,
+    "runaway_risk": "medium",
+    "community_links": [
+      {
+        "url": "https://qm.qq.com/q/apiyi",
+        "type": "qq",
+        "label": "QQ群"
+      }
+    ],
+    "description": "国内老牌API中转站,百度百科收录。支持OpenAI/Claude/Gemini及国产模型,OpenAI兼容格式。注册送免费额度,微信支付宝充值。运营时间较长,用户基数较大。",
+    "last_checked_at": null,
+    "created_at": "2026-06-26T07:19:46.822326+00:00",
+    "updated_at": "2026-06-26T07:19:46.822326+00:00"
+  },
+  {
+    "id": "50000000-0000-0000-0000-000000000009",
+    "name": "UU API",
+    "slug": "uuapi",
+    "website_url": "https://www.uuapi.cn",
+    "logo_url": "",
+    "founded_at": "2024-09-01",
+    "status": "online",
+    "categories": [
+      "chat",
+      "coding",
+      "image_gen"
+    ],
+    "supported_models": [
+      "openai",
+      "claude",
+      "gemini",
+      "deepseek"
+    ],
+    "openai_compatible": true,
+    "supports_streaming": true,
+    "supports_function_call": true,
+    "price_multiplier": 0.55,
+    "billing_type": "prepaid",
+    "has_free_quota": true,
+    "rate_limit_note": "支持GPT原生生图;Opus-4.7 ¥11/M",
+    "concurrency_limit": null,
+    "payment_methods": [
+      "alipay",
+      "wechat",
+      "card"
+    ],
+    "signup_barrier": "low",
+    "reputation_score": 3,
+    "runaway_risk": "medium",
+    "community_links": [
+      {
+        "url": "https://t.me/uuapi_cn",
+        "type": "tg",
+        "label": "Telegram"
+      }
+    ],
+    "description": "少数支持GPT原生图像生成(gpt-image)的中转站之一。同时提供标准文本对话API,Opus 4.7约¥11/百万token。支持支付宝/微信/银行卡多种支付方式。",
+    "last_checked_at": null,
+    "created_at": "2026-06-26T07:42:38.131662+00:00",
+    "updated_at": "2026-06-26T07:42:38.131662+00:00"
+  },
+  {
+    "id": "50000000-0000-0000-0000-000000000015",
+    "name": "Bulita",
+    "slug": "bulita",
+    "website_url": "https://sub.bulita.net",
+    "logo_url": "",
+    "founded_at": "2025-07-01",
+    "status": "online",
+    "categories": [
+      "chat",
+      "coding"
+    ],
+    "supported_models": [
+      "openai",
+      "claude"
+    ],
+    "openai_compatible": true,
+    "supports_streaming": true,
+    "supports_function_call": true,
+    "price_multiplier": 0.45,
+    "billing_type": "prepaid",
+    "has_free_quota": true,
+    "rate_limit_note": "新站;LINUX DO社区反馈靠谱",
+    "concurrency_limit": null,
+    "payment_methods": [
+      "alipay",
+      "wechat"
+    ],
+    "signup_barrier": "low",
+    "reputation_score": 2.5,
+    "runaway_risk": "medium",
+    "community_links": [
+      {
+        "url": "https://t.me/bulita_net",
+        "type": "tg",
+        "label": "Telegram"
+      }
+    ],
+    "description": "来自LINUX DO社区推荐的新站,社区用户反馈靠谱。提供OpenAI和Claude两大系列的API中转,注册送体验额度。作为新站运营时间短,建议持续关注社区口碑变化。",
+    "last_checked_at": null,
+    "created_at": "2026-06-26T07:42:38.810139+00:00",
+    "updated_at": "2026-06-26T07:42:38.810139+00:00"
+  },
+  {
+    "id": "50000000-0000-0000-0000-000000000002",
+    "name": "NekoCode",
+    "slug": "nekocode",
+    "website_url": "https://www.nekocode.cn",
+    "logo_url": "",
+    "founded_at": "2026-01-01",
+    "status": "online",
+    "categories": [
+      "chat",
+      "coding"
+    ],
+    "supported_models": [
+      "openai",
+      "claude",
+      "gemini",
+      "deepseek"
+    ],
+    "openai_compatible": true,
+    "supports_streaming": true,
+    "supports_function_call": true,
+    "price_multiplier": 0.45,
+    "billing_type": "prepaid",
+    "has_free_quota": true,
+    "rate_limit_note": "2026年新站;界面简洁;接口稳定",
+    "concurrency_limit": null,
+    "payment_methods": [
+      "alipay",
+      "wechat"
+    ],
+    "signup_barrier": "low",
+    "reputation_score": 2.5,
+    "runaway_risk": "medium",
+    "community_links": [
+      {
+        "url": "https://t.me/nekocode_cn",
+        "type": "tg",
+        "label": "Telegram群"
+      }
+    ],
+    "description": "2026年新上线的中转站,界面简洁易用,接口稳定性口碑不错。支持OpenAI/Claude/Gemini/DeepSeek主流模型,价格有竞争力。作为新站运营时间短,建议小额测试后再大规模使用。",
+    "last_checked_at": null,
+    "created_at": "2026-06-26T07:42:37.217615+00:00",
+    "updated_at": "2026-06-26T07:42:37.217615+00:00"
+  },
+  {
+    "id": "50000000-0000-0000-0000-000000000013",
+    "name": "co.yes.vg",
+    "slug": "coyesvg",
+    "website_url": "https://co.yes.vg",
+    "logo_url": "",
+    "founded_at": "2024-11-01",
+    "status": "online",
+    "categories": [
+      "chat",
+      "coding"
+    ],
+    "supported_models": [
+      "openai",
+      "claude"
+    ],
+    "openai_compatible": true,
+    "supports_streaming": true,
+    "supports_function_call": true,
+    "price_multiplier": 0.4,
+    "billing_type": "subscription",
+    "has_free_quota": false,
+    "rate_limit_note": "包月套餐;适合轻量使用",
+    "concurrency_limit": null,
+    "payment_methods": [
+      "alipay",
+      "wechat"
+    ],
+    "signup_barrier": "low",
+    "reputation_score": 2.5,
+    "runaway_risk": "medium",
+    "community_links": [
+      {
+        "url": "https://t.me/yesvg",
+        "type": "tg",
+        "label": "Telegram"
+      }
+    ],
+    "description": "主打包月套餐的轻量中转站,每月固定费用,不受Token波动影响。适合用量稳定、不喜欢按量计费不确定性的开发者。仅支持OpenAI和Claude两大系列。",
+    "last_checked_at": null,
+    "created_at": "2026-06-26T07:42:38.593785+00:00",
+    "updated_at": "2026-06-26T07:42:38.593785+00:00"
+  },
+  {
+    "id": "50000000-0000-0000-0000-000000000012",
+    "name": "nicecode",
+    "slug": "nicecode",
+    "website_url": "https://www.nicecode.cc",
+    "logo_url": "",
+    "founded_at": "2024-12-01",
+    "status": "online",
+    "categories": [
+      "chat",
+      "coding",
+      "embedding"
+    ],
+    "supported_models": [
+      "openai",
+      "claude",
+      "gemini",
+      "deepseek"
+    ],
+    "openai_compatible": true,
+    "supports_streaming": true,
+    "supports_function_call": true,
+    "price_multiplier": 0.48,
+    "billing_type": "prepaid",
+    "has_free_quota": true,
+    "rate_limit_note": "V2EX/LINUX DO社区用户自荐;稳定运营中",
+    "concurrency_limit": null,
+    "payment_methods": [
+      "alipay",
+      "wechat"
+    ],
+    "signup_barrier": "low",
+    "reputation_score": 2.5,
+    "runaway_risk": "medium",
+    "community_links": [
+      {
+        "url": "https://t.me/nicecode_cc",
+        "type": "tg",
+        "label": "Telegram"
+      }
+    ],
+    "description": "来自V2EX和LINUX DO社区用户自荐的中转站。支持OpenAI/Claude/Gemini/DeepSeek主流模型及Embedding。社区驱动运营,用户反馈直接影响服务迭代。",
+    "last_checked_at": null,
+    "created_at": "2026-06-26T07:42:38.479051+00:00",
+    "updated_at": "2026-06-26T07:42:38.479051+00:00"
+  },
+  {
+    "id": "50000000-0000-0000-0000-000000000011",
+    "name": "DawCode",
+    "slug": "dawcode",
+    "website_url": "https://www.dawcode.cn",
+    "logo_url": "",
+    "founded_at": "2025-05-01",
+    "status": "online",
+    "categories": [
+      "chat",
+      "coding"
+    ],
+    "supported_models": [
+      "openai",
+      "claude",
+      "gemini"
+    ],
+    "openai_compatible": true,
+    "supports_streaming": true,
+    "supports_function_call": true,
+    "price_multiplier": 0.42,
+    "billing_type": "prepaid",
+    "has_free_quota": true,
+    "rate_limit_note": "注册送4元额度;每日签到送额度",
+    "concurrency_limit": null,
+    "payment_methods": [
+      "alipay",
+      "wechat"
+    ],
+    "signup_barrier": "low",
+    "reputation_score": 2.5,
+    "runaway_risk": "medium",
+    "community_links": [
+      {
+        "url": "https://t.me/dawcode",
+        "type": "tg",
+        "label": "Telegram群"
+      }
+    ],
+    "description": "以签到送额度为特色的中转站,注册即送4元体验金,每日签到可获额外额度。适合轻度使用和长期薅羊毛的用户。运营模式新颖,但体量较小。",
+    "last_checked_at": null,
+    "created_at": "2026-06-26T07:42:38.364253+00:00",
+    "updated_at": "2026-06-26T07:42:38.364253+00:00"
+  },
+  {
+    "id": "20000000-0000-0000-0000-000000000010",
+    "name": "FoxCode",
+    "slug": "foxcode",
+    "website_url": "https://foxcode.app",
+    "logo_url": "",
+    "founded_at": "2024-09-01",
+    "status": "online",
+    "categories": [
+      "chat",
+      "coding"
+    ],
+    "supported_models": [
+      "openai",
+      "claude",
+      "gemini"
+    ],
+    "openai_compatible": true,
+    "supports_streaming": true,
+    "supports_function_call": true,
+    "price_multiplier": 0.25,
+    "billing_type": "prepaid",
+    "has_free_quota": false,
+    "rate_limit_note": "每天有1-2小时不稳定期;性价比极高但波动大",
+    "concurrency_limit": null,
+    "payment_methods": [
+      "alipay",
+      "wechat"
+    ],
+    "signup_barrier": "low",
+    "reputation_score": 2.5,
+    "runaway_risk": "high",
+    "community_links": [],
+    "description": "性价比极高的中转站,RMB:USD约1:11-17的购买力。但稳定性有波动,每天可能有1-2小时不稳定期。适合对价格极度敏感、可接受偶尔中断的个人开发者。小额充值使用,不建议大额。",
+    "last_checked_at": null,
+    "created_at": "2026-06-26T07:19:46.935187+00:00",
+    "updated_at": "2026-06-26T07:19:46.935187+00:00"
+  },
+  {
+    "id": "50000000-0000-0000-0000-000000000007",
+    "name": "智惠API",
+    "slug": "zhihuiapi",
+    "website_url": "https://www.zhihuiapi.cn",
+    "logo_url": "",
+    "founded_at": "2026-02-01",
+    "status": "online",
+    "categories": [
+      "chat",
+      "coding",
+      "embedding",
+      "rerank"
+    ],
+    "supported_models": [
+      "openai",
+      "claude",
+      "gemini",
+      "deepseek",
+      "qwen",
+      "glm"
+    ],
+    "openai_compatible": true,
+    "supports_streaming": true,
+    "supports_function_call": true,
+    "price_multiplier": 0.45,
+    "billing_type": "prepaid",
+    "has_free_quota": true,
+    "rate_limit_note": "2026年新站;hvoy可领5元兑换码;Opus4.8 ¥8.12/M",
+    "concurrency_limit": null,
+    "payment_methods": [
+      "alipay",
+      "wechat"
+    ],
+    "signup_barrier": "low",
+    "reputation_score": 2.5,
+    "runaway_risk": "medium",
+    "community_links": [
+      {
+        "url": "https://t.me/zhihuiapi",
+        "type": "tg",
+        "label": "Telegram"
+      }
+    ],
+    "description": "2026年新上线的中转站,通过hvoy.ai可领5元免费兑换码。支持Embedding和Rerank,价格定位中低端。Opus 4.8约¥8.12/百万token,对新模型跟进速度较快。",
+    "last_checked_at": null,
+    "created_at": "2026-06-26T07:42:37.889724+00:00",
+    "updated_at": "2026-06-26T07:42:37.889724+00:00"
   }
 ]

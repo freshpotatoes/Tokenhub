@@ -30,20 +30,19 @@ import Disclaimer from '@/components/Disclaimer';
 
 // ===== 静态生成 =====
 
-export function generateStaticParams() {
-  // MVP 阶段用 mock 数据的 slug 预渲染
-  const providers = getAllProviders();
+export async function generateStaticParams() {
+  const providers = await getAllProviders();
   return providers.map((p) => ({ slug: p.slug }));
 }
 
 // ===== 动态 Meta =====
 
-export function generateMetadata({
+export async function generateMetadata({
   params,
 }: {
   params: { slug: string };
-}): Metadata {
-  const provider = getProviderBySlug(params.slug);
+}): Promise<Metadata> {
+  const provider = await getProviderBySlug(params.slug);
   if (!provider) return { title: '中转站不存在' };
 
   const modelList = provider.supported_models
@@ -60,15 +59,15 @@ export function generateMetadata({
 
 // ===== 页面组件 =====
 
-export default function ProviderDetailPage({
+export default async function ProviderDetailPage({
   params,
 }: {
   params: { slug: string };
 }) {
-  const provider = getProviderBySlug(params.slug);
+  const provider = await getProviderBySlug(params.slug);
   if (!provider) notFound();
 
-  const priceHistory = getPriceHistory(params.slug);
+  const priceHistory = await getPriceHistory(params.slug);
 
   // 首字母头像
   const firstChar = provider.name.charAt(0);

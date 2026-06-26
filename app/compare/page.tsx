@@ -24,7 +24,7 @@ interface ComparePageProps {
   searchParams: Record<string, string | string[] | undefined>;
 }
 
-export default function ComparePage({ searchParams }: ComparePageProps) {
+export default async function ComparePage({ searchParams }: ComparePageProps) {
   // 从 URL 读取要对比的 slug 列表
   const slugsParam = searchParams.slugs;
   const slugs =
@@ -32,9 +32,11 @@ export default function ComparePage({ searchParams }: ComparePageProps) {
       ? slugsParam.split(',').filter(Boolean)
       : [];
 
-  const providers = slugs
-    .map((slug) => getProviderBySlug(slug))
-    .filter(Boolean) as NonNullable<ReturnType<typeof getProviderBySlug>>[];
+  // 并行查询所有选中站点
+  const results = await Promise.all(
+    slugs.map((slug) => getProviderBySlug(slug))
+  );
+  const providers = results.filter(Boolean) as NonNullable<Awaited<ReturnType<typeof getProviderBySlug>>>[];
 
   return (
     <div className="mx-auto max-w-7xl px-4 py-6">

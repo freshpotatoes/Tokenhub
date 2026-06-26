@@ -3,66 +3,72 @@
  *
  * POST /api/submit
  *
- * 接收用户提交的中转站信息,存储为待审核草稿。
- * 当前 MVP 阶段:仅做校验并返回成功,数据由前端存入 localStorage。
- *
- * TODO: 接入 Supabase 后:
- *   const supabase = createClient(...);
- *   const { data, error } = await supabase.from('drafts').insert({...});
+ * 接收用户提交的中转站信息,写入 submissions 表(status=pending 待审核),
+ * 不直接写入 provider 表。
  */
 
 import { NextRequest, NextResponse } from 'next/server';
+import { insertSubmission } from '@/lib/db';
 
 export async function POST(request: NextRequest) {
   try {
     const body = await request.json();
 
-    // 基础校验
+    // 基础校验 — 名称
     if (!body.name || typeof body.name !== 'string' || !body.name.trim()) {
       return NextResponse.json({ error: '中转站名称不能为空' }, { status: 400 });
     }
 
-    if (!body.website_url || typeof body.website_url !== 'string' || !body.website_url.trim()) {
+    // 基础校验 — 网址
+    if (
+      !body.website_url ||
+      typeof body.website_url !== 'string' ||
+      !body.website_url.trim()
+    ) {
       return NextResponse.json({ error: '网站地址不能为空' }, { status: 400 });
     }
 
     // 校验 URL 格式
     try {
-      new URL(body.website_url);
+      new URL(body.website_url.trim());
     } catch {
       return NextResponse.json({ error: '网站地址格式不正确' }, { status: 400 });
     }
 
-    // TODO: 接入 Supabase 后写入 drafts 表
-    // const { data, error } = await supabase.from('drafts').insert({
-    //   name: body.name.trim(),
-    //   website_url: body.website_url.trim(),
-    //   suggested_models: body.suggested_models || [],
-    //   suggested_price_multiplier: body.suggested_price_multiplier || null,
-    //   submitter_note: body.submitter_note || '',
-    //   contact_email: body.contact_email || null,
-    //   status: 'pending',
-    // });
-    // if (error) throw error;
+    // 防重复:不在此处实现(需要查询已有 submissions,增加复杂度)
+    // 后续可在 Supabase 中加 unique constraint 或 edge function
 
-    console.log('[submit] 收到新提交:', {
+    // 写入 submissions 表
+    const id = await insertSubmission({
       name: body.name,
       website_url: body.website_url,
-      models: body.suggested_models,
-      timestamp: new Date().toISOString(),
+      suggested_models: body.suggested_models || [],
+      suggested_price_multiplier: body.suggested_price_multiplier ?? undefined,
+      submitter_note: body.submitter_note || '',
+      contact_email: body.contact_email || undefined,
     });
+
+    if (!id) {
+      return NextResponse.json(
+        { error: '提交失败,请稍后重试' },
+        { status: 500 }
+      );
+    }
 
     return NextResponse.json(
       {
         success: true,
         message: '提交成功,等待审核',
-        id: `draft_${Date.now()}`,
+        id,
       },
       { status: 201 }
     );
   } catch (error) {
     const message = error instanceof Error ? error.message : String(error);
     console.error('[submit] 处理失败:', message);
-    return NextResponse.json({ error: '提交处理失败,请稍后重试' }, { status: 500 });
+    return NextResponse.json(
+      { error: '提交处理失败,请稍后重试' },
+      { status: 500 }
+    );
   }
 }
