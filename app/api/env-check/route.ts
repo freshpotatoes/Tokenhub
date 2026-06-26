@@ -7,7 +7,7 @@ export async function GET() {
     supabaseUrl: 'hardcoded',
     anonKey: 'hardcoded',
     serviceKey: {
-      set: !!process.env.SUPABASE_SERVICE_ROLE_KEY,
+      set: !!process.env.TOKENHUB_SERVICE_KEY,
     },
     adminSecret: {
       set: !!process.env.ADMIN_SECRET,

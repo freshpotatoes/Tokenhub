@@ -15,13 +15,13 @@ envContent.split(/\r?\n/).forEach(line => {
 });
 
 const url = env.NEXT_PUBLIC_SUPABASE_URL;
-const key = env.SUPABASE_SERVICE_ROLE_KEY;
+const key = env.TOKENHUB_SERVICE_KEY;
 
 console.log('URL:', url ? url.slice(0, 40) + '...' : 'MISSING');
 console.log('Key:', key ? key.slice(0, 20) + '...' : 'MISSING');
 
 if (!url || !key) {
-  console.error('请在 .env.local 中设置 NEXT_PUBLIC_SUPABASE_URL 和 SUPABASE_SERVICE_ROLE_KEY');
+  console.error('请在 .env.local 中设置 NEXT_PUBLIC_SUPABASE_URL 和 TOKENHUB_SERVICE_KEY');
   process.exit(1);
 }
 

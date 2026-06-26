@@ -9,9 +9,9 @@ import { createClient } from '@supabase/supabase-js';
 const SUPABASE_URL = 'https://lbojcxapaabochuhrlkw.supabase.co';
 
 export function createServerClient() {
-  const supabaseKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
+  const supabaseKey = process.env.TOKENHUB_SERVICE_KEY;
   if (!supabaseKey) {
-    throw new Error('缺少 SUPABASE_SERVICE_ROLE_KEY 环境变量');
+    throw new Error('缺少 TOKENHUB_SERVICE_KEY 环境变量');
   }
   return createClient(SUPABASE_URL, supabaseKey, {
     auth: { autoRefreshToken: false, persistSession: false },

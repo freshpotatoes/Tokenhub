@@ -7,7 +7,7 @@ const { createClient } = require('@supabase/supabase-js');
 const fs = require('fs'), path = require('path');
 const env = {};
 fs.readFileSync(path.join(__dirname,'..','.env.local'),'utf-8').split(/\r?\n/).forEach(l=>{const m=l.match(/^([A-Z_]+)=(.*)/);if(m)env[m[1]]=m[2].trim();});
-const supabase = createClient(env.NEXT_PUBLIC_SUPABASE_URL,env.SUPABASE_SERVICE_ROLE_KEY);
+const supabase = createClient(env.NEXT_PUBLIC_SUPABASE_URL,env.TOKENHUB_SERVICE_KEY);
 
 const providers = [
   {

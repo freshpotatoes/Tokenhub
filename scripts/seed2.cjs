@@ -13,7 +13,7 @@ envContent.split(/\r?\n/).forEach(line => {
   if (m) env[m[1]] = m[2].trim();
 });
 
-const supabase = createClient(env.NEXT_PUBLIC_SUPABASE_URL, env.SUPABASE_SERVICE_ROLE_KEY);
+const supabase = createClient(env.NEXT_PUBLIC_SUPABASE_URL, env.TOKENHUB_SERVICE_KEY);
 
 // 10 个覆盖非对话类 API 的中转站/聚合平台
 // 重点填补: video_gen, audio_asr, image_understanding, rerank

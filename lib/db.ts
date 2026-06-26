@@ -117,8 +117,8 @@ export interface SubmitPayload {
 export async function insertSubmission(
   payload: SubmitPayload
 ): Promise<string | null> {
-  if (!process.env.SUPABASE_SERVICE_ROLE_KEY) {
-    console.error('[db] 缺少 SUPABASE_SERVICE_ROLE_KEY,写入失败');
+  if (!process.env.TOKENHUB_SERVICE_KEY) {
+    console.error('[db] 缺少 TOKENHUB_SERVICE_KEY,写入失败');
     return null;
   }
 

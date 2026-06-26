@@ -11,9 +11,9 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
   }
 
-  const key = process.env.SUPABASE_SERVICE_ROLE_KEY;
+  const key = process.env.TOKENHUB_SERVICE_KEY;
   if (!key) {
-    return NextResponse.json({ error: '缺少 SUPABASE_SERVICE_ROLE_KEY' }, { status: 500 });
+    return NextResponse.json({ error: '缺少 TOKENHUB_SERVICE_KEY' }, { status: 500 });
   }
 
   const SUPABASE_URL = 'https://lbojcxapaabochuhrlkw.supabase.co';
