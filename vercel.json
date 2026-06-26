@@ -1,7 +1,3 @@
 {
-  "framework": "nextjs",
-  "env": {
-    "TOKENHUB_SERVICE_KEY": "@TOKENHUB_SERVICE_KEY",
-    "ADMIN_SECRET": "@ADMIN_SECRET"
-  }
+  "framework": "nextjs"
 }
