@@ -1,100 +1,43 @@
 # TokenHub — API 中转站信息聚合平台
 
+**网址**: [hubsoftoken.vercel.app](https://hubsoftoken.vercel.app)
+
 聚合国内外 API 中转站信息,提供模型支持、价格、口碑、运营状态的横向对比。
 **不提供 API 销售或代理服务**,仅供信息参考。
 
-## 技术栈
+---
 
-- **框架**: Next.js 14 (App Router) + TypeScript
-- **样式**: Tailwind CSS
-- **数据库**: 当前本地 Mock JSON → 预留 Supabase (PostgreSQL)
-- **部署**: Vercel
+## 网站功能
 
-## 本地启动
+- **首页列表** — 卡片展示所有中转站,在线状态一目了然(🟢正常 / 🟡可疑 / 🔴关站)
+- **多维筛选** — 按用途分类、支持模型、支付方式、计费方式、注册门槛、免费额度筛选
+- **关键词搜索** — 支持搜索名称、分类、模型、支付方式等
+- **价格排序** — 按价格倍率升序/降序,快速找到最便宜的中转站
+- **横向对比** — 勾选 2-5 个站点,生成 15 个维度的对比表格
+- **站点详情** — 完整字段信息 + 价格变动历史 + 社群链接 + 信誉评分 + 跑路风险评估
+- **分类聚合** — 按用途分类浏览,每个类别独立页面
+- **用户提交** — 提交新的中转站信息,审核后加入列表
+- **存活监控** — 定时探测各站点可访问性,自动更新在线状态
 
-```bash
-# 1. 安装依赖
-npm install
+---
 
-# 2. 启动开发服务器
-npm run dev
+## 收录统计
 
-# 3. 浏览器打开
-# http://localhost:3000
-```
+共收录 **45 个** API 中转站 / 聚合平台,覆盖 **9 个** 用途分类:
 
-## 项目结构
+| 用途分类 | 数量 | 说明 |
+|----------|------|------|
+| AI 对话 | 44 | ChatGPT、Claude、Gemini、国产大模型等 |
+| 代码生成 | 44 | Claude Code、Codex、Cursor 等编程工具 |
+| 文生图 | 25 | DALL-E、FLUX、Stable Diffusion 等 |
+| 向量嵌入 | 23 | Embedding、RAG、语义搜索 |
+| 重排序 | 19 | Rerank、搜索结果优化 |
+| 语音合成 | 16 | TTS、文本转语音 |
+| 语音识别 | 14 | ASR、Whisper、语音转文本 |
+| 图片理解 | 14 | GPT-4V、Claude Vision 等多模态 |
+| 文生视频 | 12 | Sora、Runway、可灵等视频生成 |
 
-```
-tokens/
-├── app/
-│   ├── layout.tsx              # 根布局
-│   ├── page.tsx                # 首页(列表+筛选)
-│   ├── providers/[slug]/       # 站点详情页
-│   ├── compare/                # 横向对比页
-│   ├── submit/                 # 数据提交页
-│   ├── api/monitor/            # 存活监控 API
-│   ├── api/submit/             # 提交接收 API
-│   ├── sitemap.ts              # Sitemap 生成
-│   └── robots.ts               # robots.txt
-├── components/
-│   ├── Header.tsx              # 导航栏
-│   ├── Footer.tsx              # 页脚(含免责声明)
-│   ├── ProviderCard.tsx        # 中转站卡片
-│   ├── FilterBar.tsx           # 筛选栏
-│   ├── CompareTable.tsx        # 对比表格
-│   ├── CompareProvider.tsx     # 对比选择 Context
-│   ├── CompareFloatingBar.tsx  # 浮动对比栏
-│   ├── StatusBadge.tsx         # 状态徽标
-│   ├── ReputationScore.tsx     # 信誉评分
-│   ├── RunawayRiskTag.tsx      # 跑路风险标签
-│   └── Disclaimer.tsx          # 免责声明
-├── lib/
-│   ├── types.ts                # 类型定义
-│   ├── db.ts                   # 数据读取层
-│   ├── filters.ts              # 筛选/排序逻辑
-│   └── monitor.ts              # 存活探测逻辑
-├── data/
-│   └── providers.json          # 10 条 Mock 数据
-├── supabase/
-│   └── schema.sql              # 建表 SQL
-└── 配置文件...
-```
-
-## 功能列表 (MVP)
-
-- [x] 首页列表 + 卡片展示
-- [x] 多维度筛选(模型/支付/计费/状态/门槛/免费额度)
-- [x] 价格排序(升序/降序)
-- [x] 横向对比页(勾选→表格)
-- [x] 站点详情页(完整字段+价格历史+社群)
-- [x] 信誉评分 + 跑路风险
-- [x] 站点存活监控探测逻辑
-- [x] 用户信息提交表单
-- [x] 全站免责声明
-- [x] Sitemap + Robots.txt
-- [x] 独立 Meta Title/Description
-
-## 接入 Supabase
-
-1. 在 [Supabase](https://supabase.com) 创建项目
-2. 在 SQL Editor 中执行 `supabase/schema.sql`
-3. 将 `.env.local.example` 复制为 `.env.local` 并填入 Supabase 凭据
-4. 替换 `lib/db.ts` 中的数据读取逻辑(注释中有 TODO 指引)
-
-## 部署到 Vercel
-
-```bash
-# 1. 安装 Vercel CLI
-npm i -g vercel
-
-# 2. 部署
-vercel
-
-# 3. 设置 Cron Job 进行定时监控(需 Pro 计划)
-# Vercel Dashboard → Settings → Cron Jobs
-# 路径: /api/monitor  频率: */30 * * * *
-```
+---
 
 ## 免责声明
 
