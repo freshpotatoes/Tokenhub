@@ -14,17 +14,13 @@ import { getAllProviders } from '@/lib/db';
 import { CATEGORY_LABELS, type CategoryType } from '@/lib/types';
 import ProviderCard from '@/components/ProviderCard';
 
-/** 所有合法的分类 slug 用于静态生成 + 404 保护 */
+/** 所有合法的分类 slug 用于 404 保护 */
 const VALID_CATEGORIES: CategoryType[] = [
   'chat', 'coding', 'image_gen', 'video_gen',
   'image_understanding', 'audio_tts', 'audio_asr', 'embedding', 'rerank',
 ];
 
-// ===== 静态生成 =====
-
-export function generateStaticParams() {
-  return VALID_CATEGORIES.map((slug) => ({ slug }));
-}
+export const revalidate = 3600; // 每小时从 Supabase 重新生成
 
 // ===== 动态 Meta =====
 

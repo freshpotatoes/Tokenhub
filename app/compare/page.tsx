@@ -10,6 +10,8 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
 import { getProviderBySlug } from '@/lib/db';
+
+export const dynamic = 'force-dynamic'; // 用户实时选择,每次请求查数据库
 import CompareTable from '@/components/CompareTable';
 import Disclaimer from '@/components/Disclaimer';
 

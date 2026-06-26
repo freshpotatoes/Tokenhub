@@ -1,24 +1,13 @@
 /**
  * 数据读取层
  *
- * 优先从 Supabase 读取数据;Supabase 未配置或查询失败时,
- * 自动回退到本地 data/providers.json (mock 数据兜底)。
- *
- * 安全分层:
- * - 读操作(provider 列表/详情/价格历史) → 使用 anon key(受 RLS 约束)
- * - 写操作(submissions 插入/监控状态更新) → 使用 service_role key
- *
- * 切换方式:
- *   在 .env.local 中设置 NEXT_PUBLIC_SUPABASE_URL + NEXT_PUBLIC_SUPABASE_ANON_KEY
- *   即自动走 Supabase;缺少即回退 mock。
+ * 从 Supabase 读取数据。Supabase 未配置或查询失败时返回空数据,
+ * 不再 fallback 到 mock JSON,避免构建时烤入假数据。
  */
 
 import { Provider, PriceHistoryRecord } from './types';
 import { getServerClient } from './supabase/server';
 import { createBrowserClient } from './supabase/client';
-import providersData from '@/data/providers.json';
-
-// ===== 兜底判断 =====
 
 function isSupabaseConfigured(): boolean {
   return !!(
@@ -27,16 +16,15 @@ function isSupabaseConfigured(): boolean {
   );
 }
 
-/** 获取用于只读查询的 anon 客户端 */
 function getAnonClient() {
   return createBrowserClient();
 }
 
-// ===== Provider 查询(使用 anon key,受 RLS 保护) =====
+// ===== Provider 查询 =====
 
 export async function getAllProviders(): Promise<Provider[]> {
   if (!isSupabaseConfigured()) {
-    return providersData as Provider[];
+    return [];
   }
 
   try {
@@ -48,13 +36,13 @@ export async function getAllProviders(): Promise<Provider[]> {
 
     if (error) {
       console.error('[db] getAllProviders 查询失败:', error.message);
-      return providersData as Provider[];
+      return [];
     }
 
-    return data as Provider[];
+    return (data || []) as Provider[];
   } catch (err) {
-    console.error('[db] Supabase 连接异常,回退 mock:', String(err));
-    return providersData as Provider[];
+    console.error('[db] Supabase 连接异常:', String(err));
+    return [];
   }
 }
 
@@ -62,7 +50,7 @@ export async function getProviderBySlug(
   slug: string
 ): Promise<Provider | undefined> {
   if (!isSupabaseConfigured()) {
-    return (providersData as Provider[]).find((p) => p.slug === slug);
+    return undefined;
   }
 
   try {
@@ -75,19 +63,19 @@ export async function getProviderBySlug(
 
     if (error) {
       console.error(`[db] getProviderBySlug("${slug}") 查询失败:`, error.message);
-      return (providersData as Provider[]).find((p) => p.slug === slug);
+      return undefined;
     }
 
     return data as Provider;
   } catch (err) {
-    console.error('[db] Supabase 连接异常,回退 mock:', String(err));
-    return (providersData as Provider[]).find((p) => p.slug === slug);
+    console.error('[db] Supabase 连接异常:', String(err));
+    return undefined;
   }
 }
 
 export async function getProviderSlugs(): Promise<string[]> {
   if (!isSupabaseConfigured()) {
-    return (providersData as Provider[]).map((p) => p.slug);
+    return [];
   }
 
   try {
@@ -96,25 +84,23 @@ export async function getProviderSlugs(): Promise<string[]> {
 
     if (error) {
       console.error('[db] getProviderSlugs 查询失败:', error.message);
-      return (providersData as Provider[]).map((p) => p.slug);
+      return [];
     }
 
     return (data as { slug: string }[]).map((row) => row.slug);
   } catch (err) {
-    console.error('[db] Supabase 连接异常,回退 mock:', String(err));
-    return (providersData as Provider[]).map((p) => p.slug);
+    console.error('[db] Supabase 连接异常:', String(err));
+    return [];
   }
 }
 
-// ===== 价格历史查询(使用 anon key) =====
+// ===== 价格历史查询 =====
 
 export async function getPriceHistory(
   slug: string
 ): Promise<PriceHistoryRecord[]> {
   if (!isSupabaseConfigured()) {
-    const provider = (providersData as Provider[]).find((p) => p.slug === slug);
-    if (!provider) return [];
-    return generateMockPriceHistory(provider);
+    return [];
   }
 
   try {
@@ -130,19 +116,17 @@ export async function getPriceHistory(
 
     if (error) {
       console.error('[db] getPriceHistory 查询失败:', error.message);
-      return generateMockPriceHistory(provider);
+      return [];
     }
 
     return (data || []) as PriceHistoryRecord[];
   } catch (err) {
-    console.error('[db] Supabase 连接异常,回退 mock:', String(err));
-    const provider = (providersData as Provider[]).find((p) => p.slug === slug);
-    if (!provider) return [];
-    return generateMockPriceHistory(provider);
+    console.error('[db] Supabase 连接异常:', String(err));
+    return [];
   }
 }
 
-// ===== 用户提交(使用 service_role key,绕过 RLS 写入) =====
+// ===== 用户提交 =====
 
 export interface SubmitPayload {
   name: string;
@@ -156,10 +140,9 @@ export interface SubmitPayload {
 export async function insertSubmission(
   payload: SubmitPayload
 ): Promise<string | null> {
-  // 写入需要 service_role key
   if (!process.env.NEXT_PUBLIC_SUPABASE_URL || !process.env.SUPABASE_SERVICE_ROLE_KEY) {
-    console.log('[db] Supabase 写入未配置,提交仅记录到控制台:', payload);
-    return `mock_${Date.now()}`;
+    console.error('[db] Supabase 写入未配置,提交失败');
+    return null;
   }
 
   try {
@@ -188,36 +171,4 @@ export async function insertSubmission(
     console.error('[db] Supabase 连接异常:', String(err));
     return null;
   }
-}
-
-// ===== Mock 价格历史生成(仅 Supabase 无数据时使用) =====
-
-function generateMockPriceHistory(provider: Provider): PriceHistoryRecord[] {
-  const basePrice = provider.price_multiplier;
-  const models = provider.supported_models.slice(0, 3);
-  const records: PriceHistoryRecord[] = [];
-
-  models.forEach((model) => {
-    for (let i = 5; i >= 0; i--) {
-      const date = new Date();
-      date.setMonth(date.getMonth() - i);
-      const jitter =
-        Math.sin(i * 1.7 + provider.id.charCodeAt(0)) * 0.1 + 0.02;
-      const multiplier =
-        Math.round((basePrice + jitter) * 100) / 100;
-
-      records.push({
-        id: `ph_${provider.id}_${model}_${i}`,
-        provider_id: provider.id,
-        model,
-        price_multiplier: multiplier > 0.1 ? multiplier : basePrice,
-        recorded_at: date.toISOString().split('T')[0],
-      });
-    }
-  });
-
-  return records.sort(
-    (a, b) =>
-      new Date(b.recorded_at).getTime() - new Date(a.recorded_at).getTime()
-  );
 }

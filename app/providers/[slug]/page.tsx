@@ -12,7 +12,7 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
-import { getProviderBySlug, getPriceHistory, getAllProviders } from '@/lib/db';
+import { getProviderBySlug, getPriceHistory } from '@/lib/db';
 import {
   MODEL_LABELS,
   PAYMENT_LABELS,
@@ -28,12 +28,7 @@ import ReputationScore from '@/components/ReputationScore';
 import RunawayRiskTag from '@/components/RunawayRiskTag';
 import Disclaimer from '@/components/Disclaimer';
 
-// ===== 静态生成 =====
-
-export async function generateStaticParams() {
-  const providers = await getAllProviders();
-  return providers.map((p) => ({ slug: p.slug }));
-}
+export const revalidate = 3600; // 每小时从 Supabase 重新生成
 
 // ===== 动态 Meta =====
 
