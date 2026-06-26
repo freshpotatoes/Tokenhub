@@ -37,17 +37,19 @@ export default function AdminPanel() {
     setLoading(true);
     try {
       const res = await fetch(`/api/admin/submissions?secret=${encodeURIComponent(s)}`);
+      const body = await res.json().catch(() => ({}));
       if (res.status === 401) {
         setAuthenticated(false);
         setMessage('密钥不正确');
       } else if (res.ok) {
-        const data = await res.json();
-        setSubmissions(data.submissions || []);
+        setSubmissions(body.submissions || []);
         setAuthenticated(true);
         setMessage('');
+      } else {
+        setMessage(`服务器错误 (${res.status}): ${body.error || '未知'}`);
       }
-    } catch {
-      setMessage('网络错误');
+    } catch (err: any) {
+      setMessage('网络错误: ' + (err.message || '无法连接'));
     }
     setLoading(false);
   };
@@ -76,8 +78,8 @@ export default function AdminPanel() {
         } else {
           setMessage(`❌ ${data.error || '操作失败'}`);
         }
-      } catch {
-        setMessage('网络错误');
+      } catch (err: any) {
+        setMessage('操作失败: ' + (err.message || '网络错误'));
       }
     },
     [secret]
