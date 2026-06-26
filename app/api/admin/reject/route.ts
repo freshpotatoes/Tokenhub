@@ -11,18 +11,19 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
   }
 
-  const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
   const key = process.env.SUPABASE_SERVICE_ROLE_KEY;
-  if (!url || !key) {
-    return NextResponse.json({ error: `缺少 Supabase 环境变量` }, { status: 500 });
+  if (!key) {
+    return NextResponse.json({ error: '缺少 SUPABASE_SERVICE_ROLE_KEY' }, { status: 500 });
   }
+
+  const SUPABASE_URL = 'https://lbojcxapaabochuhrlkw.supabase.co';
 
   try {
     const { submissionId } = await request.json();
     if (!submissionId) {
       return NextResponse.json({ error: '缺少 submissionId' }, { status: 400 });
     }
-    const supabase = createClient(url, key);
+    const supabase = createClient(SUPABASE_URL, key);
     const { error } = await (supabase as any)
       .from('submissions').update({ status: 'rejected' })
       .eq('id', submissionId).eq('status', 'pending');

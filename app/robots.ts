@@ -8,7 +8,7 @@
 import { MetadataRoute } from 'next';
 
 export default function robots(): MetadataRoute.Robots {
-  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://tokenhub.example.com';
+  const baseUrl = 'https://hubsoftoken.vercel.app';
 
   return {
     rules: [

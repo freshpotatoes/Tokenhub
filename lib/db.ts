@@ -9,13 +9,6 @@ import { Provider, PriceHistoryRecord } from './types';
 import { getServerClient } from './supabase/server';
 import { createBrowserClient } from './supabase/client';
 
-function isSupabaseConfigured(): boolean {
-  return !!(
-    process.env.NEXT_PUBLIC_SUPABASE_URL &&
-    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY
-  );
-}
-
 function getAnonClient() {
   return createBrowserClient();
 }
@@ -23,10 +16,6 @@ function getAnonClient() {
 // ===== Provider 查询 =====
 
 export async function getAllProviders(): Promise<Provider[]> {
-  if (!isSupabaseConfigured()) {
-    return [];
-  }
-
   try {
     const supabase = getAnonClient();
     const { data, error } = await supabase
@@ -49,10 +38,6 @@ export async function getAllProviders(): Promise<Provider[]> {
 export async function getProviderBySlug(
   slug: string
 ): Promise<Provider | undefined> {
-  if (!isSupabaseConfigured()) {
-    return undefined;
-  }
-
   try {
     const supabase = getAnonClient();
     const { data, error } = await supabase
@@ -74,10 +59,6 @@ export async function getProviderBySlug(
 }
 
 export async function getProviderSlugs(): Promise<string[]> {
-  if (!isSupabaseConfigured()) {
-    return [];
-  }
-
   try {
     const supabase = getAnonClient();
     const { data, error } = await supabase.from('providers').select('slug');
@@ -99,10 +80,6 @@ export async function getProviderSlugs(): Promise<string[]> {
 export async function getPriceHistory(
   slug: string
 ): Promise<PriceHistoryRecord[]> {
-  if (!isSupabaseConfigured()) {
-    return [];
-  }
-
   try {
     const provider = await getProviderBySlug(slug);
     if (!provider) return [];
@@ -140,8 +117,8 @@ export interface SubmitPayload {
 export async function insertSubmission(
   payload: SubmitPayload
 ): Promise<string | null> {
-  if (!process.env.NEXT_PUBLIC_SUPABASE_URL || !process.env.SUPABASE_SERVICE_ROLE_KEY) {
-    console.error('[db] Supabase 写入未配置,提交失败');
+  if (!process.env.SUPABASE_SERVICE_ROLE_KEY) {
+    console.error('[db] 缺少 SUPABASE_SERVICE_ROLE_KEY,写入失败');
     return null;
   }
 

@@ -13,24 +13,15 @@ export async function GET(request: NextRequest) {
   }
 
   // 诊断:逐变量检查
-  const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
   const key = process.env.SUPABASE_SERVICE_ROLE_KEY;
-
-  if (!url) {
-    return NextResponse.json({
-      error: '缺少 NEXT_PUBLIC_SUPABASE_URL',
-      hasUrl: false, hasKey: !!key,
-    }, { status: 500 });
-  }
   if (!key) {
-    return NextResponse.json({
-      error: '缺少 SUPABASE_SERVICE_ROLE_KEY',
-      hasUrl: true, hasKey: false,
-    }, { status: 500 });
+    return NextResponse.json({ error: '缺少 SUPABASE_SERVICE_ROLE_KEY' }, { status: 500 });
   }
+
+  const SUPABASE_URL = 'https://lbojcxapaabochuhrlkw.supabase.co';
 
   try {
-    const supabase = createClient(url, key);
+    const supabase = createClient(SUPABASE_URL, key);
     const { data, error } = await (supabase as any)
       .from('submissions')
       .select('*')

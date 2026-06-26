@@ -23,7 +23,7 @@ const ALL_CATEGORIES: CategoryType[] = [
 ];
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://tokenhub.example.com';
+  const baseUrl = 'https://hubsoftoken.vercel.app';
 
   const providers = await getAllProviders();
 
