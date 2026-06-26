@@ -8,7 +8,7 @@
  * 这样筛选结果可以被分享 URL、被搜索引擎索引。
  */
 
-export const revalidate = 3600; // 每小时从 Supabase 重新生成
+export const revalidate = 0; // 每次请求实时数据
 
 import { getAllProviders } from '@/lib/db';
 import { filterProviders, parseSearchParams } from '@/lib/filters';

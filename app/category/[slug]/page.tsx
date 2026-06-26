@@ -20,7 +20,7 @@ const VALID_CATEGORIES: CategoryType[] = [
   'image_understanding', 'audio_tts', 'audio_asr', 'embedding', 'rerank',
 ];
 
-export const revalidate = 3600; // 每小时从 Supabase 重新生成
+export const revalidate = 0; // 每次请求实时数据
 
 // ===== 动态 Meta =====
 

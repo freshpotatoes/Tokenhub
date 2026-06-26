@@ -28,7 +28,7 @@ import ReputationScore from '@/components/ReputationScore';
 import RunawayRiskTag from '@/components/RunawayRiskTag';
 import Disclaimer from '@/components/Disclaimer';
 
-export const revalidate = 3600; // 每小时从 Supabase 重新生成
+export const revalidate = 0; // 每次请求实时数据
 
 // ===== 动态 Meta =====
 
