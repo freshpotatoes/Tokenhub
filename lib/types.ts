@@ -194,7 +194,7 @@ export interface Provider {
   description: string;
 
   // 时间戳
-  last_checked_at: string;
+  last_checked_at: string | null;
   created_at: string;
   updated_at: string;
 }
